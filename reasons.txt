@@ -1,0 +1,2 @@
+1. why do we need to use a live server? - for viewing changes dynamically (prevents the need for reloading, like nodemon)
+2. 

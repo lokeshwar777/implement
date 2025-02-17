@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/davegray.css" />
+    </head>
+    <body style="background-color: black; color: white">
+        <header>
+            <nav aria-labelledby="primary-navigation">
+                <h2 id="primary-navigation">Primary Navigation</h2>
+            </nav>
+        </header>
+        <main>
+            <h4>description list</h4>
+            <dl>
+                <dt>description term</dt>
+                <dd>description data</dd>
+            </dl>
+            <article>
+                <section>
+                    <aside>
+                        <details>
+                            <summary>Guess the number of hours i sleep</summary>
+                            <p>
+                                It's atmost
+                                <time datetime="PT3H">8 hours</time>, i wake up
+                                at <time datetime="07:00">7 am</time> everyday
+                            </p>
+                        </details>
+                    </aside>
+                </section>
+            </article>
+        </main>
+        <hr />
+        <article id="contact">
+            <h2>Contack Me</h2>
+            <p>i'd really love to receive your inputs</p>
+
+            <form action="https://httpbin.org/get" method="get">
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <p>
+                        <label for="firstName">First Name:</label>
+                        <input
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            placeholder="Harvey"
+                            autocomplete="on"
+                            required
+                            autofocus
+                        />
+                    </p>
+                    <p>
+                        <label for="lastName">Last Name:</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            placeholder="Specter"
+                            autocomplete="on"
+                            required
+                        />
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="tell us your secret"
+                            autocomplete="on"
+                            required
+                        />
+                    </p>
+                    <p>
+                        <label for="phone">Phone:</label>
+                        <input
+                            type="tel"
+                            name="phone"
+                            id="phone"
+                            placeholder="123-456-7890"
+                            autocomplete="on"
+                            pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                            required
+                        />
+                    </p>
+                    <p>
+                        <label for="decade">Decade:</label>
+                        <input
+                            type="number"
+                            name="decade"
+                            id="decade"
+                            min="1980"
+                            max="2020"
+                            step="10"
+                            value="2020"
+                        />
+                    </p>
+                    <p>
+                        <label for="favouriteCharacter"
+                            >Favourite Character:</label
+                        >
+                        <select
+                            name="favouriteCharacter"
+                            id="favouriteCharacter"
+                        >
+                            <!-- multiple -->
+                            <!-- size="5" -->
+                            <optgroup label="Male">
+                                <option value="mikeRoss">Mike Ross</option>
+                                <option value="harveySpecter" selected>
+                                    Harvey Specter
+                                </option>
+                                <option value="louisLitt">Louis Litt</option>
+                                <option value="robertZane">Robert Zane</option>
+                            </optgroup>
+                            <optgroup label="Female">
+                                <option value="donnaPaulsen">
+                                    Donna Paulsen
+                                </option>
+                                <option value="jessicaPearson">
+                                    Jessica Pearson
+                                </option>
+                                <option value="samanthaWheeler">
+                                    Samantha Wheeler
+                                </option>
+                                <option value="rachelZane">Rachel Zane</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="hatedCharacter"
+                            >Most Hated Character:</label
+                        >
+                        <input
+                            type="text"
+                            name="hatedCharacter"
+                            id="hatedCharacter"
+                            list="character-list"
+                        />
+                        <datalist id="character-list">
+                            <option value="Travis Tanner"></option>
+                            <option value="Cameron Dennis"></option>
+                            <option value="Tony Geanopolis"></option>
+                        </datalist>
+                    </p>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Which is your fav season?</legend>
+                    <p>
+                        <input
+                            type="radio"
+                            name="season-1"
+                            id="season-1"
+                            value="season-1"
+                        />
+                        <label for="season-1">Season 1 - Intro</label>
+                    </p>
+                    <p>
+                        <input
+                            type="radio"
+                            name="season-2"
+                            id="season-2"
+                            value="season-2"
+                        />
+                        <label for="season-2">Season 2 - Reveal</label>
+                    </p>
+                    <p>
+                        <input
+                            type="radio"
+                            name="season-3"
+                            id="season-3"
+                            value="season-3"
+                        />
+                        <label for="season-3">Season 3 - Comeback</label>
+                    </p>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Which of these similar ones do you like?</legend>
+                    <p>
+                        <input
+                            type="checkbox"
+                            name="tv-shows"
+                            id="the-mentalist"
+                            value="the-mentalist"
+                        />
+                        <label for="the-mentalist">The Mentalist</label>
+                    </p>
+                    <p>
+                        <input
+                            type="checkbox"
+                            name="tv-shows"
+                            id="the-good-doctor"
+                            value="the-good-doctor"
+                        />
+                        <label for="the-good-doctor">The Good Doctor</label>
+                    </p>
+                    <p>
+                        <input
+                            type="checkbox"
+                            name="tv-shows"
+                            id="young-sheldon"
+                            value="young-sheldon"
+                        />
+                        <label for="young-sheldon">Young Sheldon</label>
+                    </p>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Is there anything you wanna tell me?</legend>
+                    <label for="message">Your message:</label>
+                    <br />
+                    <textarea
+                        name="message"
+                        id="message"
+                        rows="5"
+                        cols="55"
+                        placeholder="Start typing here..."
+                    ></textarea>
+                </fieldset>
+                <br />
+                <button type="submit">Submit</button>
+                <button
+                    type="submit"
+                    formaction="https://httpbin.org/post"
+                    formmethod="post"
+                >
+                    Post
+                </button>
+                <button type="reset">Reset</button>
+            </form>
+        </article>
+        <hr />
+        <footer>
+            &lt;&lt;&lt; &copy;
+            <a href="https://www.linkedin.com/in/lokeshwar777/">Lokeshwar</a>
+            &gt;&gt;&gt;
+        </footer>
+    </body>
+</html>

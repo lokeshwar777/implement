@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+}
+
+.TODO {
+    color: yellow;
+}
+
+a {
+    color: aliceblue;
+}
+
+a:active,
+a:hover {
+    color: aquamarine;
+}

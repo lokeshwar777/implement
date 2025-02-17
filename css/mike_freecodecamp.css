@@ -1,0 +1,8 @@
+a {
+    color: aliceblue;
+}
+
+a:active,
+a:hover {
+    color: aquamarine;
+}

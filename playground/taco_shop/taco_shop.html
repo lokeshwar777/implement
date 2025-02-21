@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="lokeshwar">
+    <meta name="description" content="a website for taco shop">
+    <meta name="keywords" content="HTML, website">
+    <title>Loki's Taco Shop Website</title>
+    <link rel="stylesheet" href="taco_shop.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Loki's Taco Shop</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#about">About
+                        <abbr title="Loki's Taco Shop">
+                            LTS
+                        </abbr>
+                    </a>
+                </li>
+                <li>
+                    <a href="#menu">Our Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Store Hours</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <figure>
+            <img src="tacos_and_drink.png" alt="tacos and a drink" title="we love tacos" width="400">
+            <figcaption>tacos and a drink</figcaption>
+        </figure>
+    </header>
+    <hr>
+    <main>
+        <article id="about">
+            <h2>About <abbr title="Loki's Taco Shop">
+                    LTS
+                </abbr></h2>
+            <p>LTS was founded in <time datetime="2025">2025</time>. This is just the <strong>begining</strong>.</p>
+            <aside>
+                <h3>Trivia Time</h3>
+                <details>
+                    <summary>
+                        When did tacos first appear in India?
+                    </summary>
+                    <p>
+                        The answer is never until you have seen it in Loki's taco shop.
+                        <!-- use cite element here -->
+                    </p>
+                </details>
+            </aside>
+
+        </article>
+        <hr>
+        <article id="menu">
+            <h2>Our Menu</h2>
+            <table>
+                <caption>Our tacos</caption>
+                <!-- <thead>
+                    <td colspan="3">Our tacos</td>
+                </thead> -->
+                <thead>
+                    <th>Tacos</th>
+                    <th>Quantitity</th>
+                    <th>Cost</th>
+                </thead>
+                <th rowspan="4">Crispy</th>
+                <tr>
+                    <td>1</td>
+                    <td>$7</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$77</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$777</td>
+                </tr>
+                <th rowspan="4">Soft</th>
+                <tr>
+                    <td>1</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>$24</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>$45</td>
+                </tr>
+                <tfoot>
+                    <td colspan="3">
+                        Chips &amp; Salsa $7777
+                    </td>
+                </tfoot>
+            </table>
+            <br>
+            <a href="#">Back to Top</a>
+        </article>
+    </main>
+    <hr>
+    <footer>
+        <p>
+            Copyright &copy; Loki's Taco Shop
+        </p>
+    </footer>
+    <hr>
+</body>
+
+</html>

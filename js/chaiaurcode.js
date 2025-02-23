@@ -27,6 +27,17 @@
  * 26 - events
  * 27 - Async JS
  * 28 - timers
+ * 29 - APIs and V8 engine
+ * 30 - promises
+ * 31 - fetch API
+ * 32 - OOP
+ * 33 - prototype
+ * 34 - call
+ * 35 - class
+ * 36 - bind
+ * 37 - getter and setter
+ * 38 - closure and lexical scoping
+ * 39 - advanced Array
  */
 
 let variable1 = "firstVal";
@@ -130,3 +141,185 @@ let val2 = undefined ?? "first val" ?? "second val";
  * Guess the number
  *
  */
+
+// Promises
+/**
+ * an object representing eventual completion or failure of an async operation
+ * 3 states - fulfil or resolve, pending, reject
+ * alternatives - Q, BlueBird
+ * creation and consumption
+ * then() executes only when resolve() is executed - chaining
+ *
+ */
+
+const samplePromise = new Promise((resolve, reject) => {
+    // do async tasks such as DB calls, encrypt, network
+    setTimeout(() => {
+        console.log("async task done");
+        const error = true;
+        if (!error) {
+            resolve({ key1: "value1", key2: "value2" }); // this is connected to then()
+        } else {
+            reject("Something went wrong loki!!. Fix it!");
+        }
+    }, 1000);
+});
+
+samplePromise
+    .then((data) => {
+        // only executes when resolve() is called
+        console.log("Promise is consumed");
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+    .finally(() => {
+        console.log("promise is either resolved or rejected");
+    });
+async function otherPromise() {
+    try {
+        const result = await samplePromise();
+        console.log(result);
+    } catch (error) {
+        console.log(error, "Gone wrong");
+    }
+}
+otherPromise();
+
+// promise creation using try-catch and async-await
+async function somefunc() {
+    try {
+        const url = ""; // set url here
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Error is ", error);
+    }
+}
+somefunc();
+
+// promise creation using then-catch
+const url = ""; // set url here
+fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log("Error time", error);
+    });
+
+// Fetch API
+/**
+ * response = fetch('something')
+ * 1. data - (private fields) onFulfiled[], onRejection[]
+ * 2. web browser/node - network segment
+ */
+
+// OOP - a programming paradigm
+/**
+ * js is a prototype-based language
+ * object - collection of properties and methods
+ * constructor function
+ * prototypes
+ * classes
+ * instances(new, this)
+ * 4 pillars - abstraction (hiding details like fetch()), encapsulation (wrapper), inheritance, polymorphism
+ * new keyword usage and significance
+ * 1. instance (an empty object) is created
+ * 2. prototype is linked
+ * 2. constructor is called
+ * 3. this keyword is injected
+ */
+
+// Prototypes
+/**
+ * javascript - prototypal behaviour and inheritance
+ * (Array,String,Function) -> Object -> null
+ * inheritance
+ * 1. __proto__ - legacy
+ * 2. setPrototypeOf() -
+ */
+
+// custom prototype
+someObjectName.prototype.somePrototypeName = function () {
+    this.someAttribute++;
+};
+// someObjectName can be Object, Array, ...
+
+// call is used to hold the reference of a function defined outside
+function outsideFunction(param) {
+    this.param = param;
+}
+
+function someFunction(param1, param2) {
+    outsideFunction.call(this, param1);
+    this.param2 = param2;
+}
+
+const someObj = new someFunction("firstval", "secondval");
+
+// classes - constructor, inheritance, super(), new, instanceof, static props,
+
+// bind - React example - this.handleClick.bind(this) - legacy
+
+// getter and setter come together - fn, class, obj
+// race condition - RangeError: maximum call stack size exceeded
+// _ represents private
+
+class GetterSetterClass {
+    constructor(param1, param2) {
+        this.param1 = param1;
+        this.param2 = param2;
+    }
+    get param1() {
+        return `${this._param1}loki`;
+    }
+    set param1(val) {
+        this._param1 = val;
+    }
+}
+
+function getterSetterFunction(param1, param2) {
+    // legacy
+    this._param1 = param1;
+    this._param2 = param2;
+
+    Object.defineProperty(this, "param1", {
+        get: () => this._param1,
+        set: function (val) {
+            this._param1 = val;
+        },
+    });
+}
+
+const getterSetterObject = {
+    _param1: "someVal1",
+    _param2: "someVal2",
+    get param1() {
+        return this._param1;
+    },
+    set param1(val) {
+        this.param1 = val;
+    },
+};
+
+// lexical scope is also shared in case of closures
+// lexical scope + function is returned
+
+// ARRAY OPTIMISATION TYPES
+// 1. continuous, Holey
+// 2. SMI (small integer), Packed element, Double (float,string,function)
+// PACKED_SMI_ELEMENTS(1,2,3), PACKED_DOUBLE_ELEMENTS(2.9), PACKED_ELEMENTS('777')
+// HOLEY_ELEMENTS (holes are expensive in js, prototype or bound check)
+
+// SMI > DOUBLE > PACKED
+// H_SMI > H_DOUBLE > H_PACKED
+
+// use push to get atleast some optimisation
+
+// can't go less optimised to more optimised
+
+// use these instead - for, for-of, forEach as these are already optimised

@@ -72,6 +72,7 @@
  * flat(level or depth) - can be Infinity
  * isArray() -
  * from() - ignores if not mentioned properly such as keys or values for an object
+ * %DebugPrint
  *
  */
 
@@ -90,7 +91,9 @@
  * {...obj1,...obj2} - spread operator
  * keys(obj) - returns an array
  * entries(obj) - returns an array of key value arrays
- *
+ * prototype
+ * getOwnPropertyDescriptor(module,"property") - writeable,enumerable,configurable
+ * defineProperty()
  */
 
 // TODO : explore JSON methods
@@ -139,3 +142,13 @@
  * setInterval(func,time,params)
  * clearInterval()
  */
+
+// TODO : explore API request methods
+/**
+ * XMLHttpRequest() - Ajax - UNSENT, OPENED, HEADERS_RECEIVED, LOADING, DONE
+ *
+ */
+
+// TODO : understand promise
+
+// TODO : explore Fetch API

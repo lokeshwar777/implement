@@ -103,7 +103,21 @@
  *
  */
 
-// TODO : Higher Order Loops
+// TODO : explore DOM methods
+/**
+ * HTMLCollection -
+ * NodeList -
+ * getElementById()
+ * querySelector()
+ * getElementsByClassName()
+ * querySelectorAll()
+ * getElementsByTagName()
+ * createElement()
+ * remove()
+ * properties - style,textContent,innerHTML,parentElement,children,childNodes,hasChildNodes,lastChild,lastElementChild,firstChild,firstElementChild,nextSibling,nextElementSibling,previousSibling,previousElementSibling,
+ */
+
+// TODO : Higher Order Loops or Functions
 /**
  * of - for(const iterator of object) - object can be array,string,object
  * map - new Map() - not iterable- order is maintained with unique values - for(const [key,val] of map) -
@@ -115,12 +129,12 @@
  *
  */
 
-// TODO : explore event
+// TODO : explore event object and methods
 /**
- * addEventListener(eventName,func,false) - eventNames(keyboard, mouse, drag and drop - type, timestamp, preventDefault, target, currentTarget, toElement, srcElement, clientX, clientX, screenX, screenY, altkey, ctrlkey, shiftkey, keyCode(typing test)), stopPropogation - 3rd parameter (true->capturing, bubbling->false)
+ * addEventListener(event,func,useCapture) - eventNames(keyboard, mouse, drag and drop - type, timestamp, preventDefault(), target, currentTarget, toElement, srcElement, clientX, clientX, screenX, screenY, altkey, ctrlkey, shiftkey, keyCode(typing test)), stopPropogation() - 3rd parameter (true->capturing, bubbling->false)
  * attackEvent() -
- * event object -
- *
+ * events - click,readystatechange,mouseover,mouseout
+ * removeEventListener() - only for named functions
  */
 
 // TODO : understand asynchronous JS
@@ -152,3 +166,11 @@
 // TODO : understand promise
 
 // TODO : explore Fetch API
+
+// TODO : explore web storage API
+/**
+ * sessionStorage - string
+ * localStorage - string
+ * setItem -
+ * getItem -
+ */

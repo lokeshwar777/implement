@@ -94,4 +94,17 @@
     - checks for the variable from local scope to global scope
     - closure or factory functions - Bag thoery
     
+15. OOP
+    - classes, objects, methods and self
+    - self is used for linking
+    - self is not required for class attributes and methods
+    - inheritance (single, multiple)
+    - encapsulation - getter, setter
+    - polymorphism
+    - class variables
+    - static methods can't be accessed using objects and do not require self as arguments
+    - property decorator prevents overriding
+    - if you are able to access attributes, you can also overwrite them
+    - instance
+    
     

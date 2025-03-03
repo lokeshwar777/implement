@@ -1,52 +1,4 @@
-'''
-import os
-os.getcwd()
-
-import sys
-sys.exit("Some Text")
-sys.platform
-sys.getrefcount('loki')
-
-import random
-randome.choice("choices")
-
-from enum import Enum
-
-import copy
-l2 = copy.copy(l1)
-l2 = copy.deepcopy(l1)
-
-
-from importlib import reload
-reload(filename)
-
-import math
-math.floor(-3.5) # closest left int val
-math.trunc(-2.7) # closest int val to 0
-
-import time
-time.sleep(wait_time)
-time.time()
-
-import copy
-list1 = copy.copy(list2)
-
-import random
-random.random()  # range is 0 to 1
-random.randint(1, 100)
-random.choice(list1)
-random.shuffle(list1)
-
-from decimal import Decimal
-0.1 + 0.1 + 0.1 - 0.3 != Decimal('0.1') + \
-                                 Decimal('0.1') + Decimal('0.1') - \
-                                         Decimal('0.3')
-
-from fractions import Fraction
-Fraction(2, 7) # 2 upon 7 or 2/7
-
-
-'''
+from math import pi
 
 input("Message")
 type()
@@ -77,6 +29,19 @@ r"c:\user\pwd"  # raw string
 s.find("substring")
 s.count("substring")
 
+# string formatting
+user = "loki"
+money = 777
+s = "\n%s has %s money left" % (user, money)
+s = "\n{} has {} money left".format(user, money)
+s = "\n{1} has {0} money left".format(money, user)
+person = {"user": "loki", "money": 777}
+s = "\n{user} has {money} money left".format(money=money, user=user)
+s = "\n{user} has {money} money left".format(**person)
+s = f"\n{user.upper()} has {7*111} money left"
+s = f"\n{person['user']} has {money} money left"
+s = f"\nThe value of PI is {pi:.7f}"  # f stands for fixed
+s = f"\nThe value of PI is {pi:.7%}"  # % is same as f
 
 # float methods
 score = 8.52
@@ -90,6 +55,7 @@ comp.imag
 # list methods
 l = []
 list1.append(element)
+l.index(element)
 l.extend([])
 list1.insert(index, element) or l[777:777] = ["newval1", "newval2"]
 l.remove(element)
@@ -100,7 +66,6 @@ l.clear()
 l.sort(key=str.lower)  # lowercase comes after uppercase
 sorted(l, reverse=True)  # returns a reverse sorted list
 l.copy() or list(l) or l[:]  # copy of list
-
 
 l = []
 l += "loki" or list("someString")
@@ -113,23 +78,29 @@ tuple3 = tuple1 + tuple2
 
 # set methods
 s1 = {1, 2, 3}
+s1.update(s2)
+s1.union(s2)
+s1.update(s2)
+s1.intersection_update(s2)
+s1.symmetric_difference_update(s2)
 s1 & s2
 s1 | s2
 s1 - s2
 
 # dictionary methods
+dict(key1="value1", key2="value2")
+d1.get()
 d1.keys()
 d1.values()
-d1.update({"key": "value"})
-
+d1.items()
+d1.update({"key": "value"}) or d1["key"] = "value"
+d1.pop("key") or del d1[key]
+d1.popitem()  # remove last added entry and returns a tuple
+d1.copy()
+d1.clear()
 for key in dict1:
     print(d1[key])  # for printing values
-for key, value in d1.items():
-    print(key, value)  # for printing both keys and values
-del d1[key]
-d1.copy()
 d1 = {x: x**2 for x in range(10)}
-d1.clear()
 d1 = dict.fromkeys(keysArray, valuesArray)
 
 # file methods
@@ -179,6 +150,7 @@ def sum_all(*args):
 
 
 def print_kwargs(**kwargs):
+    print(kwargs)  # dictionary
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
@@ -222,3 +194,15 @@ cube = power(3)
 
 print(square(2))  # 4
 print(cube(3))  # 8
+
+# higher order functions
+
+
+def squareLambda(num): return num * num
+
+
+squares = map(lambda num: num*num, list1)
+odd_nums = filter(lambda num: num % 2 == 1, list1)
+
+# from functools import reduce
+total = reduce(lambda acc, curr: acc+curr, list1)

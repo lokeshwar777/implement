@@ -16,6 +16,7 @@
     - byte code != machine code
     - cpython - standard implementation
     - garbage collection for int and strings is performed a bit late
+    - in python types are assigned to objects(values) instead of variables unlike any other language
 
 3. python shell - 
     - AttributeError -
@@ -107,4 +108,24 @@
     - if you are able to access attributes, you can also overwrite them
     - instance
     
+16. decorators
+    - similar to middlewares in js
+    - starts with '@'
+
+17. API
+    - requests module
+    - response -> string
     
+18. virtual environment
+
+19. anaconda and jupyter notebook
+    - comes with its own python version
+    - starts a venv with base
+    - conda active, deactivate
+    - use pip or conda, not both
+    - 
+
+20. FastAPI
+    - uvicorn+fastapi = express.js
+
+'''

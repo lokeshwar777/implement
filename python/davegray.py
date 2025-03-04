@@ -43,4 +43,28 @@
     - inheritance
     - polymorphism - the ability to behave differently for int response to the same input messages
 
+21. virtual environment
+    - pip -> preferred installer program or pip installs packages
+    - weatherAPI
+    - dotenv
+    - requests
+    - pprint
+
+22. file handling
+    - r(Read-default),a(Append),w(Write),x(Create),t(Text-default),b(binary)
+
+23. Flask
+    - server, app
+
+24. Web App
+    - venv
+    - templates
+    - static css
+    - query parameters
+    - .gitignore -> .env .venv __pychache__
+    - sqlalchemy - ORM
+
+25. REST API
+    - endpoint,HTTP method,req,res,server,DB
+    - 
 '''

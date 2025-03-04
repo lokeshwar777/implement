@@ -105,13 +105,15 @@ d1 = dict.fromkeys(keysArray, valuesArray)
 
 # file methods
 f = open('fileName.py')
+f.read()  # default all characters, error if file doesn't exist
+f.read(characterCount)
 f.readLine()  # reads line until \n is found and returns '' if not found
 f.readLines()
 f.__next__()  # raw method
 
 # readings contents of a file
 # Using for loop
-for line in open('fileName.py'):
+for line in f:
     print(line, end='')
 # Using while loop
 f = open('fileName.py')

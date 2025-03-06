@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "nodemon": "^3.1.9"
+    }
+}

@@ -1,0 +1,1 @@
+This is the text from read stream file. This is adddional sentence.

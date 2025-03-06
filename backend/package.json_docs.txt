@@ -1,0 +1,44 @@
+{
+  "name": "loki/oauth2",
+  "version": "1.0.0", // for semver
+  "description": "A package to implementat a JavaScript library that handles the OAuth 2.0 authorization flow", // search
+  "keywords": ["oauth2", "oauth", "authorization", "authentication","platform-agnostic"], // search
+  "homepage": "https://github.com/lokeshwar777/loki-oauth2-js-lib#readme",
+  "bugs": { // issues and contact
+    "url": "https://github.com/lokeshwar777/loki-oauth2-js-lib/issues",
+    "email": "lokeshwar777@gmail.com"
+  },
+  "license":"MIT", // usage and publication
+  "author": "Mallepally Lokeshwar Reddy", 
+  "funding":[], // individual or paetron
+  "files": ["src","dist"], // src for source files and dist for built artifacts
+  "exports": {
+    ".": {
+      "import":"./dist/oauthClient.min.js", // For ES modules (modern browsers and Node.js ESM)
+      "require":"./src/oauthClient.js", // For CommonJS (Node.js with CommonJS module system)
+    },
+    "browser":"./dist/oauthClient.min.js", // Browser-specific: minified version
+    "node":"./src/oauthClient.js", // Node.js-specific: main unminified version
+    "default":"./src/oauthClient.js", // Fallback to Node.js version if no environment is specified
+  }, // entry points and runtime environments, import(ESmodule,modern),require(commonJS,legacy) vs node(fs,https),browser(fetch,window,document,localStorage),default, universalAPIs(fetch,axios,URLSearchParams) vs browserspecificAPIs(window,document,localStorage)
+  "main": "src/oauthClient.js",
+  "browser" : "dist/oauthClient.min.js",
+  "bin": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokeshwar777/loki-oauth2-js-lib.git"
+  },
+  "scripts": {
+    "build":"",
+    "install": "",
+    "start": "",
+    "test": ""
+  },
+  "config": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies":{},
+  "engines": {},
+  "os": [],
+
+}

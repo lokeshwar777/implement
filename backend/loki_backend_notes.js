@@ -9,6 +9,15 @@
  * toolchains or bundler - parcel,vite
  * api requests - fetch,axios,reactquery
  * cors,proxy
+ * versions - "major.minor.patch" - *(latest,not safe),^(minor or patch), ~(only patch)
+ * specific version module@version
+ */
+
+// topics
+/**
+ * 1. file handling
+ * 2. npm
+ * 3. events
  */
 
 // js modules
@@ -23,8 +32,9 @@
  * os -
  * path -
  * fs -
- * date-fns -
+ * date-fns - date functions,
  * chalk -
+ * uuid - unique id generator
  */
 
 // package.json
@@ -49,6 +59,8 @@
  * modules - commonjs, es6
  * npm init
  * npm i -D or npm i --save-dev for development dependency
+ * npm rm moduleName (default - doesn't remove from package.json)
+ * npm uninstall moduleName
  */
 
 // express

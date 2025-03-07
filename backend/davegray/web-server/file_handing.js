@@ -27,8 +27,8 @@ const path = require("path");
 // console.log(path.extname(__filename));
 // console.log(path.parse(__filename));
 
-const math = require("./math");
-const { mul, div } = require("./math");
+const math = require("../math");
+const { mul, div } = require("../math");
 // console.log(math.add(1, 2));
 // console.log(math.sub(1, 2));
 // console.log(mul(1, 2));

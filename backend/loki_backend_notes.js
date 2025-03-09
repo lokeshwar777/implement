@@ -35,6 +35,9 @@
  * date-fns - date functions,
  * chalk -
  * uuid - unique id generator
+ * http - basic web server
+ * events - emitting, logging
+ *
  */
 
 // package.json
@@ -71,6 +74,17 @@
  * request -
  * response -
  * routes - do not forget '/'
+ * route handlers -
+ * status codes -
+ */
+
+// regex
+/**
+ * ^ - starts with
+ * $ - ends with
+ * | - or
+ * ? - optional
+ * () - grouping
  */
 
 // cors (cross origin resource policy)

@@ -18,14 +18,17 @@ const { v4: uuid } = require("uuid");
 
 // use fs for check, and fsPromises for CRUD
 
-const handleEvents = async (message, fieName) => {
+const logEvents = async (message, fieName) => {
     try {
         // create a logs dir if it doesn't exists
-        if (!fs.existsSync("./logs")) {
-            await fsPromises.mkdir("./logs", (error) => {
-                if (error) throw error;
-                // console.log("logs directory created.");
-            });
+        if (!fs.existsSync(path.join(__dirname, "..", "logs"))) {
+            await fsPromises.mkdir(
+                path.join(__dirname, "..", "logs"),
+                (error) => {
+                    if (error) throw error;
+                    // console.log("logs directory created.");
+                }
+            );
         }
 
         const logInfo = `${format(
@@ -35,7 +38,7 @@ const handleEvents = async (message, fieName) => {
 
         // write logs
         await fsPromises.appendFile(
-            path.join(__dirname, "logs", fieName),
+            path.join(__dirname, "..", "logs", fieName),
             logInfo,
             (error) => {
                 if (error) throw error;
@@ -47,4 +50,10 @@ const handleEvents = async (message, fieName) => {
     }
 };
 
-module.exports = handleEvents;
+const logger = (req, res, next) => {
+    logEvents(`${req.method}\t${req.headers.origin}\t${req.url}`, "reqLog.txt");
+    console.log(`${req.method} ${req.path}`);
+    next();
+};
+
+module.exports = { logEvents, logger };

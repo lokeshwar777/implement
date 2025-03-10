@@ -37,7 +37,9 @@
  * uuid - unique id generator
  * http - basic web server
  * events - emitting, logging
- *
+ * limiter - rate limiting
+ * json-server -
+ * jsonwebtoken -
  */
 
 // package.json
@@ -123,4 +125,12 @@
  * connection - modular, IIFEs
  * async/await + exceptional handling - try catch
  * DB is in another continent
+ */
+
+// JWT - tokens
+/**
+ * cookie + httponly - secure
+ * access tokens
+ * refresh tokens
+ * cookies handling + cors error handling
  */

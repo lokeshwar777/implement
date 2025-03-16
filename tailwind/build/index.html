@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind CSS</title>
+  <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+  <link href="./css/output.css" rel="stylesheet" />
+</head>
+
+<body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
+  <h1 class="text-5xl">Tailwind CSS configuration steps</h1>
+  <ol>
+    <li class="pt-4">
+      1. Testing tailwindcss using the CDN, i.e by including a script tag in
+      html
+    </li>
+    <li class="pt-4">
+      2.
+      <a class="underline" href="https://tailwindcss.com/docs/installation/tailwind-cli" target="_blank">Tailwind CSS
+        CLI setup</a>
+    <li class="px-8"><code>npm init -y</code></li>
+    </li>
+    <li class="px-8">
+      create an input.css file in src with ->
+      <code> @import "tailwindcss"; </code>
+    </li>
+    <li class="px-8">
+      take input from src/input.css and output it to build/css/output.css file
+    </li>
+    <li class="px-8">
+      configure run script in package.json ->
+      <code>"tailwind": "npx @tailwindcss/cli -i ./src/input.css -o
+          ./build/css/output.css --watch"</code>
+    </li>
+    <li class="pt-4">
+      3.
+      <a class="underline"
+        href="https://tailwindcss.com/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted"
+        target="_blank">
+        prettier setup for automatic class sorting
+      </a>
+    </li>
+    <li class="px-8">
+      install the plugin as a dev dependency ->
+      <code>npm install -D prettier-plugin-tailwindcss</code>
+    </li>
+    <li class="px-8">
+      add plugin to .prettierrc file ->
+      <code>{ "plugins": ["prettier-plugin-tailwindcss"] }</code>
+    </li>
+    <li class="px-8">
+      configure run script in package.json -> ->
+      <code>"format": "npx prettier --write **/*.html"</code>
+    </li>
+    <li class="pt-4">4. <a href="https://tailwindcss.com/docs/installation/using-vite" target="_blank"
+        class="underline">Vite setup</a>
+    </li>
+    <li class="px-8">You don't need to add the prettier script in the package.json</li>
+  </ol>
+  <p class="pt-8 text-3xl">Use the commands in the terminal</p>
+  <ol>
+    <li>
+      <code>npm run tailwind</code> -> see the live magic of tailwind on save
+    </li>
+    <li><code>npm run format</code> -> to perform sorting of classes</li>
+  </ol>
+  <p class="pt-8 text-3xl">Use the commands in the terminal</p>
+  <li>there is a thing called preflight in tailwind which performs the reset - <a
+      href="https://tailwindcss.com/docs/preflight" target="_blank" class="underline">Read More</a></li>
+</body>
+
+</html>

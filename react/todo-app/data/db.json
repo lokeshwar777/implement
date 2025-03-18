@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "id": "2",
+      "description": "CSS",
+      "isCompleted": true
+    },
+    {
+      "id": "3",
+      "description": "React",
+      "isCompleted": false
+    }
+  ]
+}

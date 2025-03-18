@@ -4,10 +4,7 @@ import { FaTrashAlt } from "react-icons/fa";
 export default function LineItem({ item, handleCheck, handleDelete }) {
   return (
     <>
-      <li
-        key={item.id}
-        className="flex max-h-19 items-center gap-2 p-2 text-slate-200 dark:odd:bg-gray-600 dark:even:bg-gray-800 dark:hover:bg-zinc-500 dark:hover:text-black"
-      >
+      <li className="flex items-center gap-2 p-2 text-slate-200 dark:odd:bg-gray-600 dark:even:bg-gray-800 dark:hover:bg-zinc-500 dark:hover:text-black">
         <input
           className="scale-125"
           type="checkbox"
@@ -15,7 +12,7 @@ export default function LineItem({ item, handleCheck, handleDelete }) {
           onChange={() => handleCheck(item.id)}
         />
         <label
-          className={`grow ${item.isCompleted && "line-through"}`}
+          className={`grow truncate ${item.isCompleted && "line-through"}`}
           onDoubleClick={() => handleCheck(item.id)}
         >
           {item.description}

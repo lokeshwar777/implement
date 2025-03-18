@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "fetch-api",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
-    "json-server": "^1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
     "tailwindcss": "^4.0.14"
   },
   "devDependencies": {

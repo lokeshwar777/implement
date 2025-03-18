@@ -14,19 +14,17 @@ export default function Content({
 }) {
   return (
     <>
-      <main className="flex grow flex-col dark:bg-gray-900">
-        <AddItem
-          handleCreate={handleCreate}
-          newItem={newItem}
-          setNewItem={setNewItem}
-        />
-        <SearchItem search={search} setSearch={setSearch} />
-        <ItemList
-          items={items}
-          handleCheck={handleCheck}
-          handleDelete={handleDelete}
-        />
-      </main>
+      <AddItem
+        handleCreate={handleCreate}
+        newItem={newItem}
+        setNewItem={setNewItem}
+      />
+      <SearchItem search={search} setSearch={setSearch} />
+      <ItemList
+        items={items}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
     </>
   );
 }

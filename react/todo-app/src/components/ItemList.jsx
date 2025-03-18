@@ -4,11 +4,11 @@ import LineItem from "./LineItem";
 export default function ItemList({ items, handleCheck, handleDelete }) {
   return (
     <>
-      <ul className="flex grow flex-col">
+      <ul className="flex grow flex-col overflow-auto">
         {items?.length ? (
-          items.map((item) => (
+          items.map((item, key) => (
             <LineItem
-              key={item.id}
+              key={key}
               item={item}
               handleCheck={handleCheck}
               handleDelete={handleDelete}

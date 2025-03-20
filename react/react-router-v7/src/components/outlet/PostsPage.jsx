@@ -13,6 +13,9 @@ export default function PostsPage({ posts, handleDelete }) {
             <h2>{post.title}</h2>
             <p>{post.datetime}</p>
             <p>{post.body}</p>
+             <Link to={`/edit/${post.id}`}>
+              <button>Edit Post</button>
+            </Link>
             <button onClick={() => handleDelete(post.id)}>Delete Post</button>
           </>
         )}

@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "First",
+      "datetime": "March 18,2025 5:57:01 PM",
+      "body": "This is the post no. 1."
+    },
+    {
+      "id": "2",
+      "title": "Two",
+      "datetime": "2024-03-18T12:30:00Z",
+      "body": "This is the second post with more details."
+    },
+    {
+      "id": "3",
+      "title": "Three",
+      "datetime": "2024-03-18T15:45:00Z",
+      "body": "This is the third post, exploring a new topic."
+    },
+    {
+      "id": "4",
+      "title": "Four",
+      "datetime": "2024-03-18T18:20:00Z",
+      "body": "This is the fourth post with insights and thoughts."
+    }
+  ]
+}

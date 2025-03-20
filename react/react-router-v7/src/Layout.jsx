@@ -1,48 +1,44 @@
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router";
+import api from "./api/posts";
 import App from "./App.jsx";
 import About from "./components/outlet/About.jsx";
+import EditPost from "./components/outlet/EditPost";
 import Home from "./components/outlet/Home.jsx";
 import Missing from "./components/outlet/Missing.jsx";
 import NewPost from "./components/outlet/NewPost.jsx";
 import PostsPage from "./components/outlet/PostsPage.jsx";
 
 export default function Layout() {
-  const mockPosts = [
-    {
-      id: 1,
-      title: "One",
-      datetime: "2024-03-18T10:00:00Z",
-      body: "This is the first post.",
-    },
-    {
-      id: 2,
-      title: "Two",
-      datetime: "2024-03-18T12:30:00Z",
-      body: "This is the second post with more details.",
-    },
-    {
-      id: 3,
-      title: "Three",
-      datetime: "2024-03-18T15:45:00Z",
-      body: "This is the third post, exploring a new topic.",
-    },
-    {
-      id: 4,
-      title: "Four",
-      datetime: "2024-03-18T18:20:00Z",
-      body: "This is the fourth post with insights and thoughts.",
-    },
-  ];
-
-  const [posts, setPosts] = useState(mockPosts || []);
+  const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [editBody, setEditBody] = useState("");
+  const [editTitle, setEditTitle] = useState("");
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get("/posts");
+        setPosts(response.data);
+      } catch (error) {
+        if (error.response) {
+          // not in 200 response range
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else {
+          console.log(`Error : ${error.message}`);
+        }
+      }
+    };
+    fetchPosts();
+  }, []);
 
   useEffect(() => {
     const filteredPosts = posts.filter(
@@ -53,7 +49,7 @@ export default function Layout() {
     setSearchResults(filteredPosts.reverse());
   }, [search, posts]);
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault();
     const newPost = {
       id: (posts?.length && Number(posts[posts.length - 1].id)) + 1,
@@ -61,17 +57,43 @@ export default function Layout() {
       datetime: format(new Date(), "MMMM dd,yyyy pp"),
       body,
     };
-    console.log("newPost", newPost);
-    setPosts([...posts, newPost]);
-    setTitle("");
-    setBody("");
-    navigate("/");
+    try {
+      const response = await api.post("/posts", newPost);
+      setPosts([...posts, response.data]);
+      setTitle("");
+      setBody("");
+      navigate("/");
+    } catch (error) {
+      console.log(`Error : ${error.message}`);
+    }
   };
 
-  const handleDelete = (id) => {
-    const filteredPosts = posts.filter((post) => post.id !== id);
-    setPosts(filteredPosts);
-    navigate("/");
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), "MMMM dd,yyyy pp");
+    const updatedPost = { id, title: editTitle, datetime, body: editBody };
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost);
+      const filteredPosts = posts.map((post) =>
+        post.id === id ? { ...response.data } : post,
+      );
+      setPosts(filteredPosts);
+      setEditBody("");
+      setEditTitle("");
+      navigate("/");
+    } catch (error) {
+      console.log(`Error : ${error} ${error.message}`);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/posts/${id}`);
+      const filteredPosts = posts.filter((post) => post.id !== id);
+      setPosts(filteredPosts);
+      navigate("/");
+    } catch (error) {
+      console.log(`Error : ${error} ${error.message}`);
+    }
   };
 
   return (
@@ -103,6 +125,19 @@ export default function Layout() {
                 }
               />
             </Route>
+            <Route
+              path="edit/:id"
+              element={
+                <EditPost
+                  posts={posts}
+                  editBody={editBody}
+                  setEditBody={setEditBody}
+                  editTitle={editTitle}
+                  setEditTitle={setEditTitle}
+                  handleEdit={handleEdit}
+                />
+              }
+            />
             <Route path="about" element={<About />} />
             <Route path="*" element={<Missing />} />
           </Route>

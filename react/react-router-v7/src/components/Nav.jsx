@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
+import DataContext from "../context/DataContext";
 
-export default function Nav({ search, setSearch }) {
+export default function Nav() {
+  const { search, setSearch } = useContext(DataContext);
   return (
     <nav className="mx-1 flex">
       <form className="grow" onSubmit={(e) => e.preventDefault()}>

@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link, useParams } from "react-router";
+import DataContext from "../../context/DataContext";
 
-export default function PostsPage({ posts, handleDelete }) {
+export default function PostsPage() {
+  const { posts, handleDelete } = useContext(DataContext);
   const { id } = useParams();
   // const post = posts.find((post) => post.id.toString() === id); // or
   const post = posts.find((post) => post.id == id);
@@ -13,7 +16,7 @@ export default function PostsPage({ posts, handleDelete }) {
             <h2>{post.title}</h2>
             <p>{post.datetime}</p>
             <p>{post.body}</p>
-             <Link to={`/edit/${post.id}`}>
+            <Link to={`/edit/${post.id}`}>
               <button>Edit Post</button>
             </Link>
             <button onClick={() => handleDelete(post.id)}>Delete Post</button>

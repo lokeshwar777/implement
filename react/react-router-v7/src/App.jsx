@@ -8,7 +8,7 @@ function App({ search, setSearch }) {
     <>
       <div className="flex min-h-screen max-w-lg grow flex-col rounded-lg border-2">
         <Header />
-        <Nav search={search} setSearch={setSearch} />
+        <Nav />
         <Outlet />
         <Footer />
       </div>

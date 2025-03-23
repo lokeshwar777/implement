@@ -1,4 +1,61 @@
 /**
  * importing `React` is not mandatory for stateless components from React 17 (refer to this - https://stackoverflow.com/questions/44141010/do-i-need-to-import-react-for-stateless-functional-components)
  * do not forget to use the `key` while rendering lists
+ * think of vite hot reload in case of any unexpected behaviour
+ */
+
+// node modules (description - copilot)
+/**
+ * react - core - to create react components - 19
+ * react-dom - browsers - to render react components
+ * react-native - mobile apps -
+ * react-icons - (TODO app - add) - a collection of icons
+ * tailwindcss - a utility-first CSS framework - v4
+ * prettier-plugin-tailwindcss - sort css classes
+ * vite - a build tool
+ * colornames - (ColorChanger) - to get the color name from the hex code
+ * date-fns -
+ * react-router-dom -
+ * react-router - v7 - nested routing
+ * axios - response.json() and if(!response.ok) are in-built
+ */
+
+// hooks and components
+/**
+ * react-dom - createRoot
+ * react - StrictMode,  useState, useEffect, useContext,
+ * react-router - BrowserRouter, Route, Routes, useNavigate(), Link, NavLink className=`({isActive,isLoading})=>{}`
+ *
+ */
+
+// uncategorised
+/**
+ * fetchAPI - fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };)
+ * axios - axios.create([config])
+ * abort controller - https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+ * custom hooks (self created, rules) - useWindowSize(), useAxiosFetch()
+ * context API - state management - imporovises on prop drilling, decoupling independent components
+ * 
+ */
+
+// best practices (do not forget)
+/**
+ * <form onSubmit={(e) => e.preventDefault()}>
+ * <label/> for every <input/>
+ * value={stateName}
+ * onChange=(e=>setStateName(e.target.value))
+ * <button type="button" or type="submit" onClick={()=>handleSubmit(params)}>
+ * small modular components
+ */
+
+// Research
+/**
+ * Web API - https://developer.mozilla.org/en-US/docs/Web/API
+ * Web Workers API - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
  */

@@ -10,6 +10,7 @@
 
 // Intro
 /**
+ * React = JS->state + UI->DOM
  * why? -> easy to manage and build complex frontend
  * phantom(ghost) message problem - inconsitency in UI
  * framework vs library
@@ -86,4 +87,11 @@ setCounter((prevCounter) => prevCounter + 1);
  * className, HTMLfor,
  * modularise code based on functionality
  *
+ */
+
+// TODO
+/**
+ * 1. background color changer
+ * 2. random password generator
+ * 3. currency converter
  */

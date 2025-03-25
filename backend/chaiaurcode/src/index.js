@@ -1,33 +1,10 @@
 // require("dotenv").config({ path: "./env" }); // inconsistent
 import dotenv from "dotenv";
 import connectDB from "./db/index.js";
-import express from "express";
-
+import { app } from "./app.js";
 dotenv.config({
     path: "./env",
 });
-
-const app = express();
-
-app.use(
-    cors({
-        origin: process.env.CORS_ORIGIN,
-        credentials: true,
-    })
-);
-
-app.use(express.json({ limit: "16kb" }));
-
-// express has default body parser
-
-// special characters from url, extended for nested objects
-app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-
-// for storing public assets and static files
-app.use(express.static("public"));
-
-// using cookies securely
-app.use(cookieParser());
 
 // api - (err,req,res,next)
 
@@ -53,7 +30,7 @@ const app = express();
 (async () => {
     try {
         await mongoose.connect(
-            `${ProcessingInstruction.env.MONGODB_URI}/${DB_NAME}`
+            `${process.env.MONGODB_URI}/${DB_NAME}`
         );
 
         app.on("error", (error) => {
@@ -70,5 +47,3 @@ const app = express();
     }
 })();
 */
-
-export { app };

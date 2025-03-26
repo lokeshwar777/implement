@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+:root {
+    background-color: slategrey;
+    color: black;
+}

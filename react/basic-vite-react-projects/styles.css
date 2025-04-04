@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #1a202c;
+        color: #f7fafc;
+    }
+}
+
+button,
+a :hover {
+    cursor: pointer;
+}

@@ -11,3 +11,9 @@ button,
 a :hover {
     cursor: pointer;
 }
+
+html,
+body,
+#root {
+    height: 100%;
+}

@@ -24,7 +24,7 @@
 /**
  * react-dom - createRoot
  * react - StrictMode,  useState, useEffect, useContext,
- * react-router - BrowserRouter, Route, Routes, useNavigate(), Link, NavLink className=`({isActive,isLoading})=>{}`
+ * react-router - BrowserRouter, Route, Routes, useNavigate(), Link, NavLink className=`({isActive,isLoading})=>{}`, useParams, loader, RouterProvider
  *
  */
 
@@ -36,7 +36,7 @@
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    };)
+    })
  * axios - axios.create([config])
  * abort controller - https://developer.mozilla.org/en-US/docs/Web/API/AbortController
  * custom hooks (self created, rules) - useWindowSize(), useAxiosFetch()
@@ -52,10 +52,17 @@
  * onChange=(e=>setStateName(e.target.value))
  * <button type="button" or type="submit" onClick={()=>handleSubmit(params)}>
  * small modular components
+ * use Link or NavLink instead of <a/>(reloads)
  */
 
 // Research
 /**
  * Web API - https://developer.mozilla.org/en-US/docs/Web/API
  * Web Workers API - https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+ */
+
+// clarity for common confusions
+/**
+fetch(url,{headers:{},}).then(response=>response.json()).then(data=>data).catch((error) => console.log(`Error : ${error}`));
+axios - has inbuilt response.json()
  */

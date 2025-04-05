@@ -24,7 +24,7 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="min-h-screen bg-[url('/images/Currency.jpg')] bg-cover bg-center justify-center items-center flex">
+        <div className="grow bg-[url('/images/Currency.jpg')] bg-cover bg-center justify-center items-center flex">
             <main className="h-80 w-md rounded-md  bg-white/50 border-1 flex flex-col p-5">
                 <section className="relative grow-1 flex flex-col gap-3">
                     <CurrencySelector

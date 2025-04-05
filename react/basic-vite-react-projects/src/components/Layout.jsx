@@ -1,22 +1,16 @@
-import { Link } from "react-router";
+import { Outlet } from "react-router";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
 
 function Layout() {
     return (
-        <ul className="list-decimal list-inside p-10 my-5 grow-1">
-            <li className="">
-                <Link to="/background-color-changer">
-                    Backgound Color Changer
-                </Link>
-            </li>
-            <li className="">
-                <Link to="/random-password-generator">
-                    Random Password Generator
-                </Link>
-            </li>
-            <li className="">
-                <Link to="/currency-converter">Currency Converter</Link>
-            </li>
-        </ul>
+        <div className="min-h-screen flex flex-col dark:bg-gray-700">
+            <Header />
+            <main className="mt-15 flex grow">
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
     );
 }
 

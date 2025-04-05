@@ -8,7 +8,7 @@ export default function RandomPasswordGenerator() {
     const [areSpecialCharactersAllowed, setAreSpecialCharactersAllowed] =
         useState(true);
 
-    const copyButtonRef = useRef(null);
+    const passwordRef = useRef(null);
 
     // overkill
     /*
@@ -92,8 +92,10 @@ export default function RandomPasswordGenerator() {
         setPassword(memoisedGeneratePassword());
     }, [memoisedGeneratePassword]);
 
-    const copyToClipboard = () => {
-        // console.log(copyButtonRef.current.innerText);
+    const copyToClipboard = (e) => {
+        const copyButtonRef = e.currentTarget; // good practice
+        // const copyButtonRef = e.target; // may refer to child
+        // console.log(copyButtonRef.innerText);
         navigator.clipboard
             .writeText(password)
             .then(() => {
@@ -108,31 +110,47 @@ export default function RandomPasswordGenerator() {
         //         .readText()
         //         .then((data) => console.log("data", data))
         // );
-        copyButtonRef.current.innerText = "copied";
-        copyButtonRef.current.disabled = true;
+        copyButtonRef.innerText = "copied";
+        copyButtonRef.disabled = true;
+        passwordRef.current?.select();
+        passwordRef.current?.setSelectionRange(2, 5);
         setTimeout(() => {
-            copyButtonRef.current.disabled = false;
-            copyButtonRef.current.innerText = "Copy";
+            copyButtonRef.disabled = false;
+            copyButtonRef.innerText = "Copy";
         }, 3000);
     };
 
+    const handleKeyDown = (e) => {
+        e.preventDefault();
+        if (e.code === "ArrowUp") {
+            setPasswordLength((prev) => Math.min(100, prev + 1));
+        }
+        if (e.code === "ArrowDown") {
+            setPasswordLength((prev) => Math.max(0, prev - 1));
+        }
+    };
+
     return (
-        <div className="min-h-screen place-items-center">
+        <div className="w-full place-items-center scale-110 origin-top">
             <main className="dark:bg-slate-700 bg-gray-700 w-xl mt-10 rounded-xl py-3 px-5 flex flex-col">
                 <section className="flex h-10">
-                    <p className="py-2 bg-amber-100 w-xs dark:text-amber-900 px-3 rounded-l-xl overflow-x-auto grow-1 whitespace-nowrap">
-                        {password}
-                    </p>
+                    <input
+                        type="text"
+                        className="py-2 bg-amber-100 dark:bg-white w-xs dark:text-amber-900 px-3 rounded-l-xl overflow-x-auto grow-1 whitespace-nowrap"
+                        ref={passwordRef}
+                        value={password}
+                        readOnly
+                    ></input>
                     <button
                         className="px-2 py-1 bg-blue-600 rounded-r-xl hover:disabled:cursor-not-allowed"
                         onClick={copyToClipboard}
-                        ref={copyButtonRef}
                     >
                         Copy
                     </button>
                     <button
-                        className="bg-amber-400 rounded-md ml-3 px-2 text-sm"
+                        className="bg-amber-400 rounded-md ml-3 px-2 text-sm dark:text-black"
                         onClick={() => setPassword(memoisedGeneratePassword())}
+                        // autoFocus={true}
                     >
                         Generate New
                     </button>
@@ -143,6 +161,8 @@ export default function RandomPasswordGenerator() {
                         id="passwordLength"
                         value={passwordLength}
                         onChange={(e) => setPasswordLength(e.target.value)}
+                        autoFocus={true}
+                        // onKeyDown={handleKeyDown}
                     />
                     <label htmlFor="passwordLength" className="w-21">
                         Length ({passwordLength})

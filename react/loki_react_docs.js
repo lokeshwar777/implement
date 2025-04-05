@@ -42,6 +42,7 @@
  * custom hooks (self created, rules) - useWindowSize(), useAxiosFetch()
  * context API - state management - imporovises on prop drilling, decoupling independent components
  * 
+ * 
  */
 
 // best practices (do not forget)
@@ -63,6 +64,6 @@
 
 // clarity for common confusions
 /**
-fetch(url,{headers:{},}).then(response=>response.json()).then(data=>data).catch((error) => console.log(`Error : ${error}`));
-axios - has inbuilt response.json()
+ * fetch(url,{headers:{},}).then(response=>response.json()).then(data=>data).catch((error) => console.log(`Error : ${error}`));
+ * axios - has inbuilt response.json()
  */

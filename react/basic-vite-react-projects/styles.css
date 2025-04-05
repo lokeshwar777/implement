@@ -1,11 +1,7 @@
 @import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        background-color: #1a202c;
-        color: #f7fafc;
-    }
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
 
 button,
 a :hover {

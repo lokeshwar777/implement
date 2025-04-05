@@ -132,7 +132,7 @@ export default function RandomPasswordGenerator() {
 
     return (
         <div className="w-full place-items-center scale-110 origin-top">
-            <main className="dark:bg-slate-700 bg-gray-700 w-xl mt-10 rounded-xl py-3 px-5 flex flex-col">
+            <main className="dark:bg-slate-700 bg-gray-700 w-xl mt-10 rounded-xl py-3 px-5 flex flex-col text-black">
                 <section className="flex h-10">
                     <input
                         type="text"

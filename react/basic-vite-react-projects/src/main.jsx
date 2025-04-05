@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./components/Layout.jsx";
@@ -6,11 +5,12 @@ import About from "./components/pages/About.jsx";
 import Connect from "./components/pages/Connect.jsx";
 import Github from "./components/pages/Github.jsx";
 import Home from "./components/pages/Home.jsx";
+import PageNotFound from "./components/pages/PageNotFound.jsx";
 import Projects from "./components/Projects.jsx";
+import Theme from "./contexts/Theme.jsx";
 import BackgroundColorChanger from "./projects/bg-color-changer/BackgroundColorChanger.jsx";
 import CurrencyConverter from "./projects/currency-converter/CurrencyConverter.jsx";
 import RandomPasswordGenerator from "./projects/password-generator/RandomPasswordGenerator.jsx";
-import PageNotFound from "./components/pages/PageNotFound.jsx";
 
 const projects = [
     {
@@ -28,7 +28,7 @@ const projects = [
 ];
 
 createRoot(document.getElementById("root")).render(
-    <StrictMode>
+    <Theme>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout />}>
@@ -53,5 +53,5 @@ createRoot(document.getElementById("root")).render(
                 </Route>
             </Routes>
         </BrowserRouter>
-    </StrictMode>
+    </Theme>
 );

@@ -89,9 +89,15 @@ setCounter((prevCounter) => prevCounter + 1);
  *
  */
 
-// TODO
+// TODO : watch remaining videos and make notes
+
+// Roadmap
 /**
- * 1. background color changer
- * 2. random password generator
- * 3. currency converter
+ * 1. React
+ * 2. Custom Hooks
+ * 3. React Router
+ * 4. Context API
+ * 5. Redux
+ * 6. Redux Toolkit
+ * 7. Zustand
  */

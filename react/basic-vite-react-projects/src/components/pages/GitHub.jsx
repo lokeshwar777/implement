@@ -36,11 +36,11 @@ export default function GitHub() {
                     name="username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="w-3xs p-1 bg-slate-300 rounded-md border-2"
+                    className="w-3xs p-1 dark:bg-slate-300 rounded-md border-2 dark:text-black dark:border-purple-500"
                     autoFocus
                 />
                 <button
-                    className="p-2 ml-5 mb-5 bg-cyan-700 rounded-md text-cyan-100"
+                    className="p-2 ml-5 mb-5 dark:bg-cyan-700 rounded-md dark:text-cyan-100"
                     type="submit"
                 >
                     Get Details

@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router";
+import ToggleDarkMode from "../projects/toggle-dark-mode/ToggleDarkMode";
 
 export default function NavBar() {
     const navLinks = [
@@ -19,7 +20,6 @@ export default function NavBar() {
                     className="h-12 rounded-full"
                 />
             </Link>
-
             {/* Sectoins */}
             <div className="grow-1 text-xl gap-10 flex justify-center">
                 {navLinks.map(({ name, route }, index) => (
@@ -34,10 +34,8 @@ export default function NavBar() {
                     </NavLink>
                 ))}
             </div>
-
             {/* Socials */}
             {/* TODO : add socials if needed */}
-
             {/* Auth */}
             {/* Use these routes if needed */}
             {/* <Link className="p-2 bg-gray-500 rounded-md" to="/login">
@@ -46,6 +44,8 @@ export default function NavBar() {
             <Link className="p-2 bg-slate-500 rounded-md" to="/signup">
                 Get Started
             </Link> */}
+
+            <ToggleDarkMode />
         </nav>
     );
 }

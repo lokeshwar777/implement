@@ -1,11 +1,10 @@
-import { useContext } from "react";
 import { Outlet } from "react-router";
-import ThemeContext from "../contexts/ThemeContext";
+import { useTheme } from "../contexts/ThemeContext";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 function Layout() {
-    const { darkMode } = useContext(ThemeContext);
+    const { darkMode } = useTheme();
 
     return (
         <div

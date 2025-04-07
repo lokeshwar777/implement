@@ -15,10 +15,13 @@ export default function Projects() {
             route: "/projects/currency-converter",
             name: "Currency Converter",
         },
-
         {
             route: "/github",
             name: "GitHub Lookup",
+        },
+        {
+            route: "/projects/todo-app",
+            name: "TODO App",
         },
     ];
 

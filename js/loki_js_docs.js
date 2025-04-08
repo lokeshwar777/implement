@@ -174,3 +174,5 @@
  * setItem -
  * getItem -
  */
+
+// TODO : explore node or global methods and properties

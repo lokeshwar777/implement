@@ -26,6 +26,14 @@
  * react - StrictMode,  useState, useEffect, useContext,
  * react-router - BrowserRouter, Route, Routes, useNavigate(), Link, NavLink className=`({isActive,isLoading})=>{}`, useParams, loader, RouterProvider
  *
+ * useState - update variables on changes
+ * useEffect - asynchronous DOM painting
+ * useLayoutEffect - synchronous DOM painting
+ * useRef - ref does not trigger a re-render
+ * useCallback - memoise a reference (function)
+ * useMemo - memoise a value (function)
+ * useContext - small or simple state management
+ * useReducer - state should be manipulated only through reducers(functions)
  */
 
 // uncategorised

@@ -48,9 +48,7 @@
  * axios - axios.create([config])
  * abort controller - https://developer.mozilla.org/en-US/docs/Web/API/AbortController
  * custom hooks (self created, rules) - useWindowSize(), useAxiosFetch()
- * context API - state management - imporovises on prop drilling, decoupling independent components
- * 
- * 
+ * state management - useReducer -> contextAPI -> Redux + Thunk -> Redux Toolkit, Zustand, React Query
  */
 
 // best practices (do not forget)
@@ -74,4 +72,32 @@
 /**
  * fetch(url,{headers:{},}).then(response=>response.json()).then(data=>data).catch((error) => console.log(`Error : ${error}`));
  * axios - has inbuilt response.json()
+ */
+
+// State Management
+/** 
+ * context API - state management - imporovises on prop drilling, decoupling independent components
+ * redux-saga - 
+
+// Redux Toolkit (GPT)
+ * thunk - a piece of code that does some delayed work
+ * RTK - Wraps classic Redux into easier, cleaner code
+ * Store - Holds global state and connects everything together
+ * State - The actual data tree inside the store
+ * Dispatch - Sends an action to the reducer, stable — it doesn’t change between renders.
+ * Action - Describes what happened (just { type, payload })
+ * Payload - The data sent with an action (optional)
+ * Reducer - Pure function: (state, action) => newState
+ * Selector - Extracts specific data from state (used in UI)
+ * createSlice - initialState + reducers + auto magic
+ * Slice - Bundle of state + reducer logic for one feature
+ * Action Creator - Function that returns { type, payload }
+ * caseReducer - One reducer inside the reducers map
+ * configureStore - Initializes the store with all slices + middleware
+ * createAsyncThunk - Handles async actions + auto states (loading, success, fail)
+ * extraReducers - Lets a slice handle actions from other slices or thunks
+ * Middleware - Intercepts actions (logging, API calls, etc.)
+ * Immer - Lets you write "mutating" code safely under the hood
+ * 
+ * Subscribe - listens to changes in store and executes code
  */

@@ -1,15 +1,19 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FaEdit, FaSave } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
-import { useTodo } from "../../contexts/TodoContext";
+import { useDispatch } from "react-redux";
+import {
+    deleteTodo,
+    editTodo,
+    toggleTodoCompletion,
+} from "../../slices/todoSlice";
 
-export default function TodoItem({ todo }) {
-    const { editTodo, deleteTodo, toggleTodoCompletion } = useTodo();
+export default function ReduxTodoItem({ todo }) {
     const [isEditing, setIsEditing] = useState(false);
     const [updatedTitle, setUpdatedTitle] = useState(todo.title);
     const editRef = useRef(null);
-
     const todoRef = useRef(null);
+    const dispatch = useDispatch();
 
     const handleEdit = () => {
         setIsEditing((prev) => !prev);
@@ -21,17 +25,17 @@ export default function TodoItem({ todo }) {
         if (!trimmedTitle) {
             setUpdatedTitle(todo.title);
         } else if (todo.title !== updatedTitle) {
-            editTodo(todo.id, updatedTitle.trim());
+            dispatch(editTodo({ id: todo.id, title: updatedTitle.trim() }));
         }
         setIsEditing((prev) => !prev);
-    }, [editTodo, todo.id, todo.title, updatedTitle]);
+    }, [dispatch, todo.id, todo.title, updatedTitle]); // Safe to add dispatch to the dependencies array
 
     const handleDelete = () => {
-        deleteTodo(todo.id);
+        dispatch(deleteTodo({ id: todo.id }));
     };
 
     const handleTodoCompletion = () => {
-        toggleTodoCompletion(todo.id);
+        dispatch(toggleTodoCompletion({ id: todo.id }));
     };
 
     useEffect(() => {
@@ -58,11 +62,11 @@ export default function TodoItem({ todo }) {
             }`}
             ref={todoRef}
         >
-            <label htmlFor="completed" hidden>
+            <label htmlFor={`completed-${todo.id}`} hidden>
                 completed
             </label>
             <input
-                id="completed"
+                id={`completed-${todo.id}`}
                 type="checkbox"
                 defaultChecked={todo.isCompleted}
                 className="scale-125 ml-2"

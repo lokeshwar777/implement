@@ -6,3 +6,4 @@
 4. Pages and Routing - react-router (Link + NavLink + Routes + Outlet + useParams + loader) - (TODO : add index.jsx for each project and use lazy for dynamic project display)
 5. Github Lookup - dynamic routing + parsing GitHub API data + prevent rate-limiting
 6. Toggle Dark Theme + TODO App - contextAPI (useContext + createContext - prop drilling) + tailwindCSS dark theme - (TODO : set default dark theme to preferred or system theme)
+7. Redux TODO App - Redux State Management (store, reducer, dispatch, slice)

@@ -23,6 +23,10 @@ export default function Projects() {
             route: "/projects/todo-app",
             name: "TODO App",
         },
+        {
+            route: "/projects/redux-todo-app",
+            name: "Redux TODO App",
+        },
     ];
 
     return (

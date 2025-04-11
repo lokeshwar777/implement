@@ -1,0 +1,19 @@
+button {
+    padding: 0.5rem;
+    background-color: skyblue;
+    border-radius: 5px;
+}
+
+#message-input {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    width: 20rem;
+}
+
+#input-form {
+    display: flex;
+    place-content: center;
+}
+
+#messages {
+    padding: 4rem;
+}

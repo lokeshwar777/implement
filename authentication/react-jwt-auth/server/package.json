@@ -1,0 +1,21 @@
+{
+    "name": "react-jwt-auth-sever",
+    "version": "1.0.0",
+    "main": "sever.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "@dotenvx/dotenvx": "^1.39.1",
+        "express": "^5.1.0",
+        "mogoose": "^0.0.1-security",
+        "mongoose": "^8.13.2",
+        "nodemon": "^3.1.9"
+    }
+}

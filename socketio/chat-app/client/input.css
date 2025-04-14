@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/*
+li {
+    @apply p-2 bg-slate-800 max-w-[50%] break-words rounded-md text-white my-1;
+}
+
+.my-message {
+    @apply self-end;
+}
+*/

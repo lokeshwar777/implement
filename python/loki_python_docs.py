@@ -1,4 +1,5 @@
 from math import pi
+from functools import lru_cache
 
 input("Message")
 type()
@@ -208,3 +209,12 @@ odd_nums = filter(lambda num: num % 2 == 1, list1)
 
 # from functools import reduce
 total = reduce(lambda acc, curr: acc+curr, list1)
+
+# cache
+
+# used for bounded memory
+@lru_cache(maxsize=128) # evicts values when size is exceeded beyond 128
+
+# @cache inner implementation
+def cache(user_function):
+    return lru_cache(maxsize=None)(user_function)

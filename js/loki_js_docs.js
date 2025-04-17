@@ -176,3 +176,9 @@
  */
 
 // TODO : explore node or global methods and properties
+
+// TODO : explore window (complete DFS)
+
+// TODO : explore WebSockets (usage + functionality)
+
+// TODO : explore Socket.IO (internals)

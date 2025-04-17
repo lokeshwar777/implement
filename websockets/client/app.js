@@ -33,7 +33,7 @@ const handleSubmit = (e) => {
     messageInput.value = '';
 };
 
-const sendMessage = async (event) => {
+const receiveMessage = async (event) => {
     const newMessageElement = document.createElement('li');
     // const newMessage = await event.data.text();
     // console.dir(newMessageElement);
@@ -46,7 +46,7 @@ const sendMessage = async (event) => {
 function initApp() {
     window.addEventListener('load', loadMessagesFromLocalStorage);
     messageForm.addEventListener('submit', handleSubmit);
-    wssWebSocket.addEventListener('message', sendMessage);
+    wssWebSocket.addEventListener('message', receiveMessage);
 }
 
 initApp();

@@ -1,2 +1,0 @@
-1. Create your own live server by exploring (node-fs,http,path,chokidar, python-httpserver, browser-sync)
-2. 

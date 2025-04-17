@@ -186,3 +186,17 @@
  * npx json-server -p 3500 data/db.json (p is for PORT, -w is for watch but it is default)
  *
  */
+
+// defer vs DOMContentLoaded (event)
+/**
+ * GPT points
+ * Script downloads in parallel with HTML parsing
+ * Executes after the DOM is fully built
+ * Ensures safe access to all elements
+ */
+
+// express app - behind the scenes
+app.listen = function (...args) {
+    const server = http.createServer(this);
+    return server.listen(...args);
+};

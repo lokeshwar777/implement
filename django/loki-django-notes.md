@@ -14,8 +14,11 @@
 10. `python3 manage.py createsuperuser` - Create Admin + configuration
 11. Dynamic content rendering
 
-## Observations
+## Observations or Terms
 
 - "(.venv) folderName ➜ " - this indicates the virtual environment is activated
 - constant config - tell the project whenever you make any changes
--
+- model - the single, definitive source of information about your data.
+- migrate - applies model changes to the database using migration files
+- wsgi - web server gateway interface (traditional + synchronous)
+- asgi - asynchronous server gateway interface (modern + synchronous + asynchronous)

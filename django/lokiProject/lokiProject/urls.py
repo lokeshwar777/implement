@@ -6,6 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homePage, name="home"),
     path('about', views.about, name="about"),
-    path('contact', views.contact),
-    path('postList', include('lokiApp.urls'))
+    path('contact', views.contact, name="contact"),
+    path('todo-app', include('todoManager.urls')),
 ]

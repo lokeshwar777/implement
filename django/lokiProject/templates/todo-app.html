@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block title %}
+
+<title>TODO Manager</title>
+{% endblock %} {% block content %}
+<div class="container mt-5 text-center">
+    <h1>TODO App</h1>
+    <h4>Manage your todos here</h4>
+
+    <form method="POST">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for todo in todos %}
+        <li>
+            <p>
+                {{ todo.title }} - {% if todo.completed %} Done {% else %}
+                Pending {% endif %}
+            </p>
+        </li>
+        {% endfor %} {% comment %} {% if todos|length == 0 %} {% endcomment %}
+        {% if not todos %}
+        <p>No Tasks</p>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

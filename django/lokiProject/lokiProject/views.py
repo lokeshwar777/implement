@@ -12,4 +12,4 @@ def about(request):
 
 
 def contact(request):
-    return HttpResponse('This is contact us page')
+    return render(request, 'contact.html')

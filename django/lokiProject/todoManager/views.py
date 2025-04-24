@@ -3,7 +3,7 @@ from todoManager.models import Todo
 from todoManager.forms import TodoForm
 
 
-def todoApp(request):
+def todoManagerApp(request):
     todos = Todo.objects.all()
     # if this is a POST request we need to process the form data
     if request.method == "POST":
@@ -15,4 +15,4 @@ def todoApp(request):
     else:
         form = TodoForm()
 
-    return render(request, 'todo-app.html', {'todos': todos, 'form': form})
+    return render(request, 'todoManager/index.html', {'todos': todos, 'form': form})

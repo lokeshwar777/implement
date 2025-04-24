@@ -3,5 +3,5 @@ from django.urls import include, path
 from . import views
 
 urlpatterns = [
-    path('', views.todoApp, name="todo-app"),
+    path('', views.todoManagerApp, name="todo-app"),
 ]

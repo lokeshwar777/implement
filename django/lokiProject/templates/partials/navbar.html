@@ -1,21 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-    <a class="navbar-brand" href="{% url 'home' %}">LokiDjangoProject</a>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
+<nav class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+    <a class="text-xl font-bold tracking-wide" href="{% url 'home' %}"
+        >LokiDjangoProject</a
+    >
+    <div>
+        <ul class="flex space-x-6">
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'home' %}"
+                    >Home</a
+                >
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'about' %}"
+                    >About</a
+                >
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'todo-app' %}">Todo Manager</a>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'todo-app' %}"
+                    >Todo Manager</a
+                >
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'contact' %}"
+                    >Contact</a
+                >
             </li>
         </ul>
     </div>

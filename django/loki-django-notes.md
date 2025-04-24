@@ -6,13 +6,16 @@
 2. `source .venv/bin/activate` - activate the virtual environment (`source .venv/Scripts/activate` for windows)
 3. `django-admin startproject lokiProject` - create a django project named `lokiProject`
 4. `python3 manage.py runserver` - start the app(server)
-5. Create Routes and render static files (HTML + CSS + template engine)
-6. `python3 manage.py startapp lokiApp` - creat a django app named `lokiApp`
+5. Create Routes and render static files using templates(HTML) and static(CSS) dirs using template engine
+6. `python3 manage.py startapp lokiApp` - creat a django app named `lokiApp` (basic files or boilerplate)
 7. Add Layout templates using static loading
-8. Create Models and apply migrations
-9. Use ORM
-10. `python3 manage.py createsuperuser` - Create Admin + configuration
-11. Dynamic content rendering
+8. Integrate tailwind with django - [docs](https://django-tailwind.readthedocs.io/en/latest/installation.html)
+9. `python3 manage.py createsuperuser` - Create Admin + configuration
+10. Create Models and apply migrations
+11. Use ORM
+12. Dynamic content rendering
+13.
+14. `deactivate` - exit virtual environment
 
 ## Observations or Terms
 

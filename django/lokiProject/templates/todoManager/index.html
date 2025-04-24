@@ -1,0 +1,46 @@
+{% extends "layout.html" %} {% block title %}
+
+<title>TODO Manager</title>
+{% endblock %} {% block content %}
+<div class="max-w-xl mx-auto text-center space-y-6">
+    <h1 class="text-3xl font-bold text-gray-800">TODO App</h1>
+    <h4 class="text-lg text-gray-800">Manage your todos here</h4>
+
+    <form method="POST" class="flex items-center w-md max-w-md mx-auto gap-3">
+        {% csrf_token %}
+
+        <label for="{{ form.title.id_for_label }}" class="font-medium">
+            {{ form.title.label }}
+        </label>
+        {{ form.title }} {% if form.title.errors %}
+        <p class="text-red-500 text-sm">{{ form.title.errors }}</p>
+        {% endif %}
+
+        <button
+            type="submit"
+            class="bg-sky-500 px-3 py-2 rounded-md hover:bg-sky-600 transition duration-150 text-black hover:text-white"
+        >
+            Add
+        </button>
+    </form>
+
+    <ul
+        class="space-y-2 overflow-auto h-80 border-2 bg-slate-600 p-4 rounded-lg"
+    >
+        {% for todo in todos %}
+        <li
+            class="bg-slate-400 p-3 rounded shadow flex justify-between items-center"
+        >
+            <p class="text-gray-800 font-medium">{{ todo.title }}</p>
+            <p
+                class="text-sm px-2 py-1 rounded {% if todo.completed %} bg-green-100 text-green-700 {% else %} bg-yellow-100 text-yellow-700 {% endif %}"
+            >
+                {% if todo.completed %} Done {% else %} Pending {% endif %}
+            </p>
+        </li>
+        {% endfor %} {% if not todos %}
+        <p class="text-gray-300 italic text-center">No Tasks</p>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

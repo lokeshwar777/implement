@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block title %}
+{% extends "layout.html" %} {% block title %} {% load static%}
 
 <title>TODO Manager</title>
 {% endblock %} {% block content %}
@@ -29,18 +29,41 @@
     >
         {% for todo in todos %}
         <li
-            class="bg-slate-400 p-3 rounded shadow flex justify-between items-center"
+            class="bg-slate-400 p-3 rounded shadow flex justify-between items-center gap-4 w-full"
+            id="{{todo.id}}"
         >
-            <p class="text-gray-800 font-medium">{{ todo.title }}</p>
-            <p
+            {% csrf_token %}
+            <input
+                type="checkbox"
+                name="todo-completed"
+                onchange="handleToggle({{todo}})"
+                {% if todo.completed %}checked{% endif %}
+                class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500 hover:cursor-pointer"
+            />
+            <input
+                name="todo-title"
+                class="text-gray-800 font-medium flex-1 text-left overflow-x-auto whitespace-nowrap h-7"
+            >
+                {{ todo.title }}
+            </p>
+            <span
                 class="text-sm px-2 py-1 rounded {% if todo.completed %} bg-green-100 text-green-700 {% else %} bg-yellow-100 text-yellow-700 {% endif %}"
             >
-                {% if todo.completed %} Done {% else %} Pending {% endif %}
-            </p>
+                {% if todo.completed %}Done{% else %}Pending{% endif %}
+            </span>
+            <button
+                onclick="handleDelete({{ todo.id }})"
+                class="w-6 h-6 bg-center bg-no-repeat bg-contain hover:scale-110 transition-transform hover:cursor-pointer"
+                style="
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgMzAgMzAiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiPiAgICA8cGF0aCBkPSJNIDE0Ljk4NDM3NSAyLjQ4NjMyODEgQSAxLjAwMDEgMS4wMDAxIDAgMCAwIDE0IDMuNSBMIDE0IDQgTCA4LjUgNCBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgNy40ODYzMjgxIDUgTCA2IDUgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDYgNyBMIDI0IDcgQSAxLjAwMDEgMS4wMDAxIDAgMSAwIDI0IDUgTCAyMi41MTM2NzIgNSBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMjEuNSA0IEwgMTYgNCBMIDE2IDMuNSBBIDEuMDAwMSAxLjAwMDEgMCAwIDAgMTQuOTg0Mzc1IDIuNDg2MzI4MSB6IE0gNiA5IEwgNy43OTI5Njg4IDI0LjIzNDM3NSBDIDcuOTEwOTY4NyAyNS4yNDEzNzUgOC43NjMzNDM4IDI2IDkuNzc3MzQzOCAyNiBMIDIwLjIyMjY1NiAyNiBDIDIxLjIzNjY1NiAyNiAyMi4wODgwMzEgMjUuMjQxMzc1IDIyLjIwNzAzMSAyNC4yMzQzNzUgTCAyNCA5IEwgNiA5IHoiLz48L3N2Zz4=');
+                "
+            ></button>
         </li>
         {% endfor %} {% if not todos %}
         <p class="text-gray-300 italic text-center">No Tasks</p>
         {% endif %}
     </ul>
 </div>
+
+<script src="{% static 'js/todoManager.js' %}" />
 {% endblock %}

@@ -28,3 +28,5 @@
 - Template tags - {% (load,static,includes,extends,url,block) %}
 - files - manage.py,admin.py,asgi.py,settings.py,urls.py,views.py,wsgi.py,apps.py,forms.py,models.py,tests.py
 - Form vs ModelForm
+- {{ vairable interpolation }} - in HTML using django
+- name="" in urls - reverse lookup

@@ -9,5 +9,5 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('contact', views.contact, name="contact"),
     # same like router.route('/todo-app') in express
-    path('todo-app', include('todoManager.urls')),
+    path('todo-app/', include('todoManager.urls')),
 ]

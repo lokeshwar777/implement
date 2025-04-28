@@ -11,11 +11,15 @@
 7. Add Layout templates using static loading
 8. Integrate tailwind with django - [docs](https://django-tailwind.readthedocs.io/en/latest/installation.html)
 9. `python3 manage.py createsuperuser` - Create Admin + configuration
-10. Create Models and apply migrations
-11. Use ORM
-12. Dynamic content rendering
-13.
-14. `deactivate` - exit virtual environment
+10. Create Models
+11. `python3 manage.py makemigrations appName` - create migrations
+12. `python3 manage.py migrate` - apply migrations
+13. Use ORM
+14. Dynamic content rendering
+15. JS as static files for event handling
+16. Create a `referenceApp` - a go-to place for examples from various sources
+17. Relationship models with admin management
+18. `deactivate` - exit virtual environment
 
 ## Observations or Terms
 
@@ -29,4 +33,7 @@
 - files - manage.py,admin.py,asgi.py,settings.py,urls.py,views.py,wsgi.py,apps.py,forms.py,models.py,tests.py
 - Form vs ModelForm
 - {{ vairable interpolation }} - in HTML using django
+- {% template %}
 - name="" in urls - reverse lookup
+- `python -m pip install Pillow` - for images
+- {% url 'route' params %}

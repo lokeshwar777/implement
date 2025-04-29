@@ -12,4 +12,6 @@ urlpatterns = [
     path('contact', views.contact, name="contact"),
     # same like router.route('/todo-app') in express
     path('todo-app/', include('todoManager.urls')),
+    path('reference-app/', include('referenceApp.urls'))
+    # config for uploading media
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.utils.text import slugify
+
 
 # Create your models here.
 
@@ -11,14 +13,29 @@ class Post(models.Model):
         ('P', 'PICS'),
         ('A', 'ALBUM')
     ]
-    name = models.CharField(max_length=50)
-    likes = models.PositiveIntegerField()
-    date_posted = models.DateTimeField()
-    slug = models.SlugField()
-    image = models.ImageField(upload_to='posts/')
+    name = models.CharField(max_length=50)  # or title
+    description = models.TextField(default='')  # or body
+    slug = models.SlugField(unique=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    # date_posted = models.DateTimeField()
     date_added = models.DateTimeField(default=timezone.now)
-    type = models.CharField(max_length=2, choices=POST_TYPE_CHOICE)
-    description = models.TextField(default='')
+    likes = models.PositiveIntegerField(default=0)
+    image = models.ImageField(
+        upload_to='posts/', blank=True, null=True, default='fallback.png')  # optional
+    type = models.CharField(
+        max_length=2, choices=POST_TYPE_CHOICE, default='P')
+
+    # GPT
+    def save(self, *args, **kwargs):  # auto creation of slug from name if blank
+        if not self.slug:
+            base_slug = slugify(self.name)
+            unique_slug = base_slug
+            counter = 0
+            while Post.objects.filter(slug=unique_slug).exists():
+                counter += 1
+                unique_slug = f"{base_slug}-{counter}"
+            self.slug = unique_slug
+        super().save(*args, **kwargs)
 
 
 # One to Many

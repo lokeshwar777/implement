@@ -10,16 +10,19 @@
 6. `python3 manage.py startapp lokiApp` - creat a django app named `lokiApp` (basic files or boilerplate)
 7. Add Layout templates using static loading
 8. Integrate tailwind with django - [docs](https://django-tailwind.readthedocs.io/en/latest/installation.html)
-9. `python3 manage.py createsuperuser` - Create Admin + configuration
-10. Create Models
-11. `python3 manage.py makemigrations appName` - create migrations
-12. `python3 manage.py migrate` - apply migrations
-13. Use ORM
-14. Dynamic content rendering
-15. JS as static files for event handling
+9. JS as static files for event handling
+10. `python3 manage.py createsuperuser` - Create Admin + configuration
+11. Create Models
+12. `python3 manage.py makemigrations appName` - create migrations
+13. `python3 manage.py migrate` - apply migrations
+14. Use ORM
+15. `python manage.py shell` - Create and persist a Django model instance
 16. Create a `referenceApp` - a go-to place for examples from various sources
-17. Relationship models with admin management
-18. `deactivate` - exit virtual environment
+17. Relationship in models
+18. Admin Dashboard and Content Management
+19. Dynamic content rendering
+20.
+21. `deactivate` - exit virtual environment
 
 ## Observations or Terms
 
@@ -36,4 +39,13 @@
 - {% template %}
 - name="" in urls - reverse lookup
 - `python -m pip install Pillow` - for images
-- {% url 'route' params %}
+
+## Selfish Things
+
+``` HTML
+<a href='/route'> </a> // plain HTML
+<a href='{% url 'url_name' params %}'> </a> // named URL from url file
+
+// examples
+<a href="{% url 'posts:all_posts' %}"> // requires `app_name = 'posts'` namespace in the urls file 
+```

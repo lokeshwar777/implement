@@ -28,6 +28,22 @@
             <li>
                 <a
                     class="hover:text-gray-300 transition"
+                    {% comment %} href="/reference-app" {% endcomment %}
+                    {% comment %} href="{% url 'all_posts' %}" {% endcomment %}
+                    href="{% url 'posts:all_posts' %}"
+                    >Reference App</a
+                >
+            </li>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="/admin"
+                    >Admin</a
+                >
+            </li>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
                     href="{% url 'contact' %}"
                     >Contact</a
                 >

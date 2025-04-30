@@ -18,6 +18,8 @@
                     >About</a
                 >
             </li>
+
+            {% if user.is_authenticated %}
             <li>
                 <a
                     class="hover:text-gray-300 transition"
@@ -25,15 +27,61 @@
                     >Todo Manager</a
                 >
             </li>
+            {% endif %}
+
             <li>
                 <a
                     class="hover:text-gray-300 transition"
                     {% comment %} href="/reference-app" {% endcomment %}
                     {% comment %} href="{% url 'all_posts' %}" {% endcomment %}
                     href="{% url 'posts:all_posts' %}"
-                    >Reference App</a
+                    >Posts</a
                 >
             </li>
+            
+            {% if user.is_authenticated %}
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'posts:new-post' %}"
+                    >Create Post</a
+                >
+            </li>
+            {% endif %}
+
+            {% if not user.is_authenticated %}
+
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'users:register' %}"
+                    >Register</a
+                >
+            </li>
+            <li>
+                <a
+                    class="hover:text-gray-300 transition"
+                    href="{% url 'users:login' %}"
+                    >Login</a
+                >
+            </li>
+
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <li>
+                <form
+                    action="{% url 'users:logout' %}"
+                    method="POST"
+                >
+                {% csrf_token %}
+                <button class="hover:text-gray-300 transition hover:cursor-pointer">
+                    Logout
+                </button>
+                </form>
+            </li>
+            {% endif %}
+
             <li>
                 <a
                     class="hover:text-gray-300 transition"

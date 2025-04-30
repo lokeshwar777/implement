@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, CreatePost
 from django.http import HttpResponse, HttpResponseNotFound
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -33,4 +35,19 @@ def post_feed_view(request):
             feed = PostsFeed.objects.filter(posts=post)
     else:
         form = PostForm()
-    return render(request, 'post/post_feed.html', {'feed', feed})
+    return render(request, 'posts/post_feed.html', {'feed', feed})
+
+
+@login_required(login_url='/users/login')
+def post_create(request):
+    if request.method == 'POST':
+        form = CreatePost(request.POST, request.FILES)
+        if form.is_valid():
+            createdPost = form.save(commit=False)
+            createdPost.author = request.user
+            createdPost.save()
+            messages.success(request, "Post created successfully.")
+            return redirect('posts:all_posts')
+    else:
+        form = CreatePost()
+    return render(request, 'posts/post_create.html', {'form': form})

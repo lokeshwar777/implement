@@ -17,7 +17,7 @@
 13. `python3 manage.py migrate` - apply migrations
 14. Use ORM
 15. `python manage.py shell` - Create and persist a Django model instance
-16. Create a `referenceApp` - a go-to place for examples from various sources
+16. Create a `referenceApp` - a go-to place for examples from various sources (Posts)
 17. Relationship in models
 18. Admin Dashboard and Content Management
 19. Dynamic content rendering
@@ -39,6 +39,7 @@
 - {% template %}
 - name="" in urls - reverse lookup
 - `python -m pip install Pillow` - for images
+- csrf token - Cross-Site Request Forgery
 
 ## Selfish Things
 

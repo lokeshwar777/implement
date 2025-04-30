@@ -24,6 +24,8 @@ class Post(models.Model):
         upload_to='posts/', blank=True, null=True, default='fallback.png')  # optional
     type = models.CharField(
         max_length=2, choices=POST_TYPE_CHOICE, default='P')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, default=None)
 
     # GPT
     def save(self, *args, **kwargs):  # auto creation of slug from name if blank

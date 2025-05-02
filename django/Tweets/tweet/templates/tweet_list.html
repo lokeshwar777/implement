@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tweet | Tweets
+{% endblock title %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto mt-12 px-6">
+    <!-- Header -->
+    <div class="flex items-center mb-8 max-w-2xl ml-7 justify-between">
+        <h1 class="text-4xl font-extrabold text-gray-900 text-center">All Tweets</h1>
+        <a href="{% url 'tweet:create' %}" class="inline-block bg-blue-600 text-white font-medium px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-shadow shadow-sm hover:shadow-md">
+            + Create Tweet
+        </a>
+    </div>
+
+    <!-- Tweet List -->
+    <main class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-6">
+        {% for tweet in tweets %}
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition-all w-xs p-6 mx-auto flex flex-col">
+            
+            {% if tweet.photo %}
+            <div class="mb-4 flex justify-center">
+                <img 
+                    src="{{ tweet.photo.url }}" 
+                    alt="tweet-photo"                          
+                    class="w-full h-auto max-h-[150px] object-contain rounded-lg "
+                />
+            </div>
+            {% endif %}
+
+            <p class="content-center text-center text-gray-800 text-lg leading-relaxed mb-3 flex-1 break-words h-auto">{{ tweet.text }}</p>
+            
+            <p class="text-sm text-gray-500 italic self-end">— {{ tweet.user }}</p>
+            
+            {% if user.is_authenticated and tweet.user == user %}
+            <div class="mt-5 flex justify-evenly space-x-3">
+                <a href="{% url 'tweet:edit' tweet.id %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md shadow hover:shadow-md transition">Edit</a>
+                <a href="{% url 'tweet:delete' tweet.id %}" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md shadow hover:shadow-md transition">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+        {% empty %}
+        <p class="text-gray-500 text-center text-lg mt-20">No tweets yet. Be the first to post!</p>
+        {% endfor %}
+    </main>
+
+</div>
+{% endblock content %}

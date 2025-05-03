@@ -1,0 +1,24 @@
+# Ignore Python cache and metadata
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Ignore virtual environment and lock files
+.python-version
+uv.lock
+
+# Ignore project metadata
+*.egg-info/
+loki_uv.egg-info/
+
+# Ignore files outside the repo (relative paths like ../)
+../README.md
+../sample_script.py
+
+# PyCharm/VSCode settings (optional)
+.idea/
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db

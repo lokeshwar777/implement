@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment (if any)
+venv/
+.env/
+.python-version
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Dependency lock files (keep only if needed)
+uv.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.coverage
+htmlcov/
+.cache/
+.pytest_cache/
+
+# Logs
+*.log
+
+# uv + Python packaging
+*.egg-info/
+dist/
+build/

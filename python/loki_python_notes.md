@@ -1,12 +1,13 @@
-'''
+# Notes
+
 1. Installation and General
     - anaconda, mini conda
     - x < y < z is equivalent to x < y and y < z
     - type({}) → <class 'dict'>
     - empty set → set()
     - True is 1 , False == 0
-    - escape sequences 
-    - range(x) → 0,1,2,...,x-1 
+    - escape sequences
+    - range(x) → 0,1,2,...,x-1
     - == checks value, is → checks reference
 
 2. Inner Working
@@ -18,7 +19,7 @@
     - garbage collection for int and strings is performed a bit late
     - in python types are assigned to objects(values) instead of variables unlike any other language
 
-3. python shell - 
+3. python shell -
     - AttributeError -
     - variables are also called attributes
     - everything in python is an object
@@ -26,7 +27,7 @@
 
 4. Immutable and mutable
     - Mutable - list, dictionary
-   -  Immutable - string(new reference is created), tuple
+   - Immutable - string(new reference is created), tuple
     - interpretation of variables and assignments
     - not var,let or const but it is all about reference to the memory
 
@@ -42,7 +43,7 @@
     - None : None
     - Funtions, modules, classes
     - Advance: Decorators, Generators, Iterators, MetaProgramming
-    
+
 6. Numbers
     - 2 + 7j → complex or imaginary numbers
     - 0o20 → Octal, 0xFF → Hexal, 0b1000 → binary
@@ -50,7 +51,7 @@
     - precision is more important(parenthesis) than knowing operator precedence
     - python has infinite number handling capability
     - number precision is infinite
-    
+
 7. String
     - repr vs str vs print
     - {} is placeholder
@@ -63,25 +64,25 @@
     - list1[1:2] = “StringName” → adds 'S','t','r',…. at 1 index
       but this works list[1:2] = [”StringName”]
     - list1[1:1] # returns empty array []
-    - list comprehension → [x**2 for x in range(10)] 
+    - list comprehension → [x**2 for x in range(10)]
 
 9. Tuple
     - Comma separated values
     - packing
     - (var1, var2, var3) = tuple1 # tuple unwrapping or unpacking
-      
+
 10. Functions
     - when there is no return for a function → None is returned
-    
+
 11. Dictionary
-    
+
 12. Iteration tools
     - files
     - iterable objects
     - just for understanding -> iteration tool(for, comprehension,map) — iter() —> iterable objects (point to the starting point in lists, file) using __next__ , next()
     - iteratable → file, dictionary, range
     - file becomes an iterable object if it is stored in a variable and a reference is given to it
-    
+
 13. Functions
     - lambda / anonymous functions
     - similar to arrow function in js but cannot be reassigned
@@ -89,12 +90,12 @@
     - multiple arguments → *args
     - keyword arguments → **kwargs
     - yield
-    
-14. scope 
+
+14. scope
     - new scope is created for every indendation
     - checks for the variable from local scope to global scope
     - closure or factory functions - Bag thoery
-    
+
 15. OOP
     - classes, objects, methods and self
     - self is used for linking
@@ -107,7 +108,7 @@
     - property decorator prevents overriding
     - if you are able to access attributes, you can also overwrite them
     - instance
-    
+
 16. decorators
     - similar to middlewares in js
     - starts with '@'
@@ -115,7 +116,7 @@
 17. API
     - requests module
     - response -> string
-    
+
 18. virtual environment
 
 19. anaconda and jupyter notebook
@@ -123,9 +124,22 @@
     - starts a venv with base
     - conda active, deactivate
     - use pip or conda, not both
-    - 
+    -
 
 20. FastAPI
     - uvicorn+fastapi = express.js
 
-'''
+21. Dependency Injection
+    - Object (creation (dependency) + usage (injection))
+
+## venv
+
+"venv is just about scoped environments. No side effects, no lock-in. Create, use, delete. Clean and simple."
+
+``` python3
+python -m venv venv         # Create isolated env
+source venv/bin/activate    # Use it
+pip install ...             # Install only inside this env
+deactivate                  # Exit
+rm -rf venv                 # Delete it if needed
+```

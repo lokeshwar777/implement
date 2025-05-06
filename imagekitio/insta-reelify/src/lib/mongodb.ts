@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const MONGODB_URI = process.env.MONGODB_URI!; // its my guarantee that you will get it
 
 if (!MONGODB_URI) {
-    throw new Error("Mongo DB URI is missing in env file");
+    throw new Error('Mongo DB URI is missing in env file');
 }
 
 const cachedConnection = global.mongoose ?? { conn: null, promise: null }; // nullish coalescing
@@ -25,7 +25,7 @@ export async function connectToDB() {
         cachedConnection.conn = await cachedConnection.promise;
     } catch (error: unknown) {
         cachedConnection.promise = null;
-        throw new Error("!!! Failed to connect to DB !!! ", error);
+        throw new Error('!!! Failed to connect to DB !!! ', error);
     }
 
     return cachedConnection.conn;

@@ -1,9 +1,9 @@
-import mongoose, { model, models, Schema } from "mongoose";
+import mongoose, { model, models, Schema } from 'mongoose';
 
 export const VIDEO_DIMENSIONS = {
     height: 1920,
     width: 1080,
-};
+} as const;
 
 export interface VideoInterface {
     _id?: mongoose.Types.ObjectId;
@@ -26,7 +26,7 @@ const videoSchema = new Schema<VideoInterface>(
         title: { type: String, required: true },
         description: { type: String, required: true },
         videoUrl: { type: String, required: true },
-        thumbnailUrl: { type: String, default: "" },
+        thumbnailUrl: { type: String, default: '' },
         controls: { type: Boolean, default: true },
         transformation: {
             height: { type: Number, default: VIDEO_DIMENSIONS.height },
@@ -37,6 +37,6 @@ const videoSchema = new Schema<VideoInterface>(
     { timestamps: true }
 );
 
-const Video = models?.Video ?? model<VideoInterface>("Video", videoSchema);
+const Video = models?.Video ?? model<VideoInterface>('Video', videoSchema);
 
 export default Video;

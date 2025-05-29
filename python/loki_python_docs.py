@@ -218,3 +218,53 @@ total = reduce(lambda acc, curr: acc+curr, list1)
 # @cache inner implementation
 def cache(user_function):
     return lru_cache(maxsize=None)(user_function)
+
+for item in iterable:
+    if condition(item):
+        break
+else:
+    # Executes **only if** the loop completes without hitting `break`
+
+
+
+# collections.Counter
+from collections import Counter
+c1 = Counter('aabc')   # {'a': 2, 'b': 1, 'c': 1}
+c2 = Counter('abbc')   # {'b': 2, 'a': 1, 'c': 1}
+
+print("c1:", c1)
+print("c2:", c2)
+
+# 1. Addition — element-wise sum (no negatives ever)
+print("Addition (c1 + c2):", c1 + c2)        # {'a': 3, 'b': 3, 'c': 2}
+
+# 2. Subtraction — drops negative/zero counts
+print("Subtraction (c1 - c2):", c1 - c2)     # {'a': 1} only
+
+# 3. Intersection (min count)
+print("Intersection (c1 & c2):", c1 & c2)    # {'a': 1, 'b': 1, 'c': 1}
+
+# 4. Union (max count)
+print("Union (c1 | c2):", c1 | c2)           # {'a': 2, 'b': 2, 'c': 1}
+
+# 5. elements() — iterator with repeated items
+print("c1 elements list:", list(c1.elements()))  # ['a', 'a', 'b', 'c']
+
+# 6. most_common()
+print("c1 most_common:", c1.most_common())      # [('a', 2), ('b', 1), ('c', 1)]
+print("c2 top 2 most_common:", c2.most_common(2))  # [('b', 2), ('a', 1)]
+
+# 7. Manual subtract (preserves negatives)
+c3 = c1.copy()
+c3.subtract(c2)
+print("Manual subtract with negatives:", c3)     # {'a': 1, 'b': -1, 'c': 0}
+
+# 8. In-place addition and subtraction
+c4 = Counter('abc')
+c5 = Counter('acd')
+
+c4 += c5
+print("In-place += :", c4)  # {'a': 2, 'b': 1, 'c': 2, 'd': 1}
+
+c4 -= c5
+print("In-place -= :", c4)  # {'a': 1, 'b': 1, 'c': 1}

@@ -41,9 +41,11 @@
 
 8. Miscellaneous
    - Procedural vs OOP
-   - virtual functions
+   - virtual functions, static, final
    - abstact vs concrete - classes & methods
    - parent-child-ancestor return type (inheritance & covariance)
+   - OOD & NVT
+   - default constructor
 
 ## Definitions
 
@@ -58,6 +60,9 @@
 - Polymorphism -
 
 ## Full Forms
+
+- NVT : Noun-Verb Technique
+- OOD : Object Oriented Design
 
 ## Implementations
 

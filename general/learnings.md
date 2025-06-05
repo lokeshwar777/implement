@@ -40,3 +40,29 @@
 - [ ] z-index & stacking context
 - [ ] vendor prefixes & compatibility
 - [x] Best Practices, Resources (([Google Fonts](https://fonts.google.com/)), ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS) (Detailed), [CSS Tricks](https://css-tricks.com/) (Practical), [Can I use](https://caniuse.com/) (Browser support))
+
+## JS
+
+- [x] what & role of JavaScript (behavior layer, interaction)
+- [x] syntax, variables & data types (primitives & reference types)
+- [x] operators (comparison, ternary)
+- [x] conditionals & loops (`for-of`, `for-in`, ...)
+- [ ] functions (declaration, expression, arrow functions, IIFE, higher-order functions)
+- [x] scope & closures (function, block & lexical scope)
+- [ ] OOP in JS (constructors, prototypes, classes, `this`, `bind`, `call`, `apply`)
+- [x] error handling (`try/catch`, `finally`, `throw`, compile & runtime)
+- [x] DOM manipulation (nodes, attributes, types, selectors)
+- [x] events & listeners (`addEventListener`, event object, bubbling, delegation)
+- [x] event loop (call stack, webAPI, callback queue)
+- [ ] working (v8 engine, execution context)
+- [ ] ES6+ features (modules vs commonjs)
+- [x] callbacks, promises & async/await (microtasks vs macrotasks)
+- [ ] JSON & APIs (parsing, `fetch`, async data handling, AJAX)
+- [ ] localStorage, sessionStorage & cookies
+- [x] arrays & objects (`map`, `filter`, `reduce`, destructuring)
+- [x] intermediate concepts (performance, memo, garbage collection, hoisting, TDZ, closure, currying, generators, IIFE)
+- [ ] advanced concepts (fn programming,  pure/impure fns, cloning, debounce, throttle, composition, shadowing, promisifying)
+- [ ] testing (unit, integration , E2E)
+- [x] method exploration (Strings, Arrays, Objects, Math, Date)
+- [ ] Dev Tools
+- [x] Best Practices & Resources ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [JavaScript.info](https://javascript.info/))

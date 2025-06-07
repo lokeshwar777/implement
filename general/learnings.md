@@ -53,8 +53,8 @@
 - [x] error handling (`try/catch`, `finally`, `throw`, compile & runtime)
 - [x] DOM manipulation (nodes, attributes, types, selectors)
 - [x] events & listeners (`addEventListener`, event object, bubbling, delegation)
-- [x] event loop (call stack, webAPI, callback queue)
-- [ ] working (v8 engine, execution context)
+- [x] working (call stack, webAPI, event loop, callback queue)
+- [x] Execution internals (v8 engine, execution context)
 - [ ] ES6+ features (modules vs commonjs)
 - [x] callbacks, promises & async/await (microtasks vs macrotasks)
 - [ ] JSON & APIs (parsing, `fetch`, async data handling, AJAX)
@@ -66,3 +66,44 @@
 - [x] method exploration (Strings, Arrays, Objects, Math, Date)
 - [ ] Dev Tools
 - [x] Best Practices & Resources ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [JavaScript.info](https://javascript.info/))
+
+## UI Exploration
+
+- [ ] Tailwind CSS
+- [ ] Bootstrap
+- [ ] MUI (Material UI)
+- [ ] Daisy UI
+- [ ] ScadCN
+- [ ] ChakraUI
+- [ ] RadixUI
+
+## UX Exploration
+
+- [ ] React
+- [ ] Angular
+- [ ] Vue
+- [ ] Svelte
+
+## React
+
+- [ ] what & why of React (component-based UI, virtual DOM, declarative code)
+- [ ] setting up a React app (manual setup, Create React App, Vite)
+- [x] JSX syntax & expressions
+- [ ] components (function vs class, props, default props)
+- [ ] state management with `useState` (primitives, objects, arrays)
+- [ ] event handling (synthetic events, inline & handler functions)
+- [x] conditional rendering (`if`, ternary, `&&`)
+- [x] list rendering with `map()` & keys
+- [x] forms & controlled components (`value`, `onChange`, form submit)
+- [x] lifting state up & prop drilling
+- [x] `useEffect` (dependencies, cleanup, common patterns)
+- [ ] component lifecycle (class vs functional comparison)
+- [x] custom hooks (creating reusable logic)
+- [x] context API (`createContext`, `useContext`)
+- [x] refs & DOM access (`useRef`, forwarding refs)
+- [ ] portals, fragments & error boundaries
+- [x] performance optimization (`React.memo`, `useMemo`, `useCallback`)
+- [x] routing (react router, dynamic routes, nested routes)
+- [ ] code splitting & lazy loading (`React.lazy`, `Suspense`)
+- [ ] testing basics (`Jest`, `React Testing Library`)
+- [ ] Best Practices & Resources ([React Docs](https://react.dev/), [Beta Docs](https://react.dev/learn), [React Patterns](https://reactpatterns.com/))

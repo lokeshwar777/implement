@@ -107,3 +107,28 @@
 - [ ] code splitting & lazy loading (`React.lazy`, `Suspense`)
 - [ ] testing basics (`Jest`, `React Testing Library`)
 - [ ] Best Practices & Resources ([React Docs](https://react.dev/), [Beta Docs](https://react.dev/learn), [React Patterns](https://reactpatterns.com/))
+
+## Node.js
+
+- [x] what & why of Node.js (JavaScript runtime, event-driven, non-blocking I/O)
+- [x] setting up a Node.js project (`npm init`, folder structure)
+- [x] working with the REPL & core modules (`fs`, `path`, `http`, `os`, `crypto`)
+- [x] CommonJS (`require`, `module.exports`) vs ES Modules (`import`, `export`)
+- [x] asynchronous programming (callbacks, promises, async/await)
+- [x] event loop, call stack, event queue, and concurrency
+- [x] working with the file system (`fs.readFile`, `fs.writeFile`, streams)
+- [ ] creating a basic HTTP server (`http.createServer`)
+- [ ] Express.js basics (routing, middleware, request/response lifecycle)
+- [ ] handling data (`req.body`, `req.params`, `req.query`)
+- [ ] serving static files with Express
+- [x] REST APIs (CRUD operations, RESTful routes)
+- [x] middleware (`express.json()`, custom middleware, `next()`)
+- [x] error handling (try/catch, error middleware)
+- [x] environment variables (`dotenv`, `.env` files)
+- [ ] working with databases (MongoDB, PostgreSQL, MySQL integration)
+- [ ] authentication & authorization (JWT, sessions, cookies)
+- [ ] input validation & sanitization (`joi`, `express-validator`)
+- [ ] logging & debugging (`morgan`, `winston`, `debug`)
+- [ ] testing (`jest`, `supertest`, `mocha`)
+- [ ] nodemon, production readiness (`pm2`, `helmet`, rate limiting)
+- [ ] Best Practices & Resources ([Node.js Docs](https://nodejs.org/en/docs), [Node Best Practices](https://github.com/goldbergyoni/nodebestpractices), [Express Docs](https://expressjs.com/))

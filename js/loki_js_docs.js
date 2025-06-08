@@ -182,3 +182,11 @@
 // TODO : explore WebSockets (usage + functionality)
 
 // TODO : explore Socket.IO (internals)
+
+// TODO : explore console  object
+/**
+ * log()
+ * dir()
+ * time()
+ * timeEnd()
+ */

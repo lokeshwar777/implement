@@ -108,6 +108,32 @@
 - [ ] testing basics (`Jest`, `React Testing Library`)
 - [ ] Best Practices & Resources ([React Docs](https://react.dev/), [Beta Docs](https://react.dev/learn), [React Patterns](https://reactpatterns.com/))
 
+## TypeScript
+
+- [x] what & why of TypeScript (superset of JS, static typing, tooling benefits)
+- [x] setting up a TypeScript project (tsconfig.json, compiler, VSCode integration)
+- [x] basic types (`string`, `number`, `boolean`, `any`, `unknown`, `void`, `null`, `undefined`)
+- [x] type inference & annotations
+- [x] union & intersection types
+- [x] literal types & type aliases
+- [x] enums (numeric & string enums)
+- [x] functions (type annotations, return types, optional/default/rest parameters)
+- [x] interfaces vs type aliases
+- [x] classes (access modifiers, constructors, inheritance, `readonly`)
+- [x] generics (functions, interfaces, classes)
+- [x] advanced types (`Partial`, `Pick`, `Record`, `Omit`, etc.)
+- [x] utility types (built-in types from TypeScript)
+- [x] narrowing & type guards (`typeof`, `in`, `instanceof`, custom type guards)
+- [ ] declaration merging & module augmentation
+- [ ] working with modules (ES modules, CommonJS, `import`/`export`)
+- [ ] working with third-party types (`@types`, DefinitelyTyped, `tsconfig.json` paths)
+- [x] type assertions & non-null assertion (`as`, `!`)
+- [ ] structural typing & duck typing
+- [x] working with DOM in TypeScript
+- [ ] Best Practices & Resources ([TypeScript Handbook](https://www.typescriptlang.org/docs/), [TS Deep Dive](https://basarat.gitbook.io/typescript/), [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped))
+
+## Linux
+
 ## Node.js
 
 - [x] what & why of Node.js (JavaScript runtime, event-driven, non-blocking I/O)

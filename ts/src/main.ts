@@ -32,7 +32,7 @@ let c = "2"; // dynamic types
 // c = 777;
 
 // console.log(a / b);
-// console.log(b * c); // set no emit error to false and uncomment this
+// console.log(b * c); // set { noEmitOnError : false } and uncomment this
 
 const sum = (a: number, b: string) => {
     return a + b;

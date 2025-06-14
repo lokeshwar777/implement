@@ -21,7 +21,7 @@ export const authOptions: NextAuthOptions = {
 				},
 				password: { label: "Password", type: "password" },
 			},
-			async authorize(credentials, req) {
+			async authorize(credentials) {
 				if (!credentials?.email || !credentials?.password) {
 					throw new Error("Missing email|password");
 				}
@@ -53,7 +53,13 @@ export const authOptions: NextAuthOptions = {
 						email: user.email,
 					};
 				} catch (error) {
-					throw new Error("problem while authenticating");
+					const errorMessage =
+						error instanceof Error ?
+							error.message
+						:	"authorizeError";
+					throw new Error(
+						`problem while authenticating : ${errorMessage}`,
+					);
 				}
 			},
 		}),

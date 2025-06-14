@@ -14,9 +14,9 @@
 2. Create user & video models - [docs](https://mongoosejs.com/docs/typescript/schemas.html#separate-document-interface-definition)
 3. `api/auth/register` route creation + tests (optional, used GPT)
 4. Auth Setup using `Next Auth` - [docs](https://next-auth.js.org/configuration/initialization)
-   1. `next-auth.d.ts` (customise docs code)
-   2. `auth.ts` (auth options config)
-   3. `api/[...nextauth]/route.js` (next auth api route)
+    1. `next-auth.d.ts` (customise docs code)
+    2. `auth.ts` (auth options config)
+    3. `api/[...nextauth]/route.js` (next auth api route)
 
 ## Points to keep in mind
 
@@ -31,17 +31,17 @@
 ## Ref pics / mental model
 
 - NextAuth Flow
-    ![alt text](<public/next_auth_flow.png>)
+  ![alt text](public/next_auth_flow.png)
 
 - Auth Options Configuration
-  - providers[]
-    - CredentialsProvider()
-      - authorise()
-  - callbacks{}
-    - jwt({token, user})
-    - session({session, token(if using `jwt` strategy)})
-  - sessions{}
-    - strategy (`"jwt"` or `"database"`)
-    - maxAge
-  - pages{}
-  - secret
+    - providers[]
+        - CredentialsProvider()
+            - authorise()
+    - callbacks{}
+        - jwt({token, user})
+        - session({session, token(if using `jwt` strategy)})
+    - sessions{}
+        - strategy (`"jwt"` or `"database"`)
+        - maxAge
+    - pages{}
+    - secret

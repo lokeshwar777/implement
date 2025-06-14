@@ -1,4 +1,4 @@
-import { POST } from '@/app/auth/register/route'; // Import your POST handler
+import { POST } from '@/app/api/auth/register/route'; // Import your POST handler
 import { connectToDB } from '@/lib/mongodb';
 import User from '@/models/User';
 import { NextRequest } from 'next/server';

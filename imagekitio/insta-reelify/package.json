@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@dotenvx/dotenvx": "^1.43.0",
+		"@imagekit/next": "^2.1.2",
 		"bcryptjs": "^3.0.2",
 		"glob": "^11.0.2",
 		"mongoose": "^8.14.1",

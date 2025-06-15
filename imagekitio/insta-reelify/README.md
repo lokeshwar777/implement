@@ -34,14 +34,14 @@
   ![alt text](public/next_auth_flow.png)
 
 - Auth Options Configuration
-    - providers[]
-        - CredentialsProvider()
-            - authorise()
-    - callbacks{}
-        - jwt({token, user})
-        - session({session, token(if using `jwt` strategy)})
-    - sessions{}
-        - strategy (`"jwt"` or `"database"`)
-        - maxAge
-    - pages{}
-    - secret
+  - providers[]
+    - CredentialsProvider()
+      - authorise()
+  - callbacks{}
+    - jwt({token, user})
+    - session({session, token(if using `jwt` strategy)})
+  - sessions{}
+    - strategy (`"jwt"` or `"database"`)
+    - maxAge
+  - pages{}
+  - secret

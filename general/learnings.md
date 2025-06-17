@@ -88,25 +88,28 @@
 
 - [ ] what & why of React (component-based UI, virtual DOM, declarative code)
 - [ ] setting up a React app (manual setup, Create React App, Vite)
+- [ ] core concepts (react element, reconciliation, virtual DOM, diffing algo)
 - [x] JSX syntax & expressions
 - [ ] components (function vs class, props, default props)
-- [ ] state management with `useState` (primitives, objects, arrays)
-- [ ] event handling (synthetic events, inline & handler functions)
 - [x] conditional rendering (`if`, ternary, `&&`)
 - [x] list rendering with `map()` & keys
-- [x] forms & controlled components (`value`, `onChange`, form submit)
+- [x] state management with `useState` (primitives, objects, arrays)
 - [x] lifting state up & prop drilling
+- [x] event handling (synthetic events, inline & handler functions)
+- [x] forms & controlled components (`value`, `onChange`, form submit)
 - [x] `useEffect` (dependencies, cleanup, common patterns)
+- [x] routing (react router, dynamic routes, nested routes)
 - [ ] component lifecycle (class vs functional comparison)
 - [x] custom hooks (creating reusable logic)
 - [x] context API (`createContext`, `useContext`)
-- [x] refs & DOM access (`useRef`, forwarding refs)
+- [x] complex state management (RTK / Zustand / React Query)
+- [x] Build Tools & Debugging (Vite/Parcel, Dev Tools, Source Maps)
+- [ ] refs & DOM access (`useRef`, forwarding refs)
 - [ ] portals, fragments & error boundaries
 - [x] performance optimization (`React.memo`, `useMemo`, `useCallback`)
-- [x] routing (react router, dynamic routes, nested routes)
 - [ ] code splitting & lazy loading (`React.lazy`, `Suspense`)
 - [ ] testing basics (`Jest`, `React Testing Library`)
-- [ ] Best Practices & Resources ([React Docs](https://react.dev/), [Beta Docs](https://react.dev/learn), [React Patterns](https://reactpatterns.com/))
+- [ ] Best Practices & Resources ([React Docs](https://react.dev/), [React Patterns](https://reactpatterns.com/))
 
 ## TypeScript
 

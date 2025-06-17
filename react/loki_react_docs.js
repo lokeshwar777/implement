@@ -101,3 +101,14 @@
  * 
  * Subscribe - listens to changes in store and executes code
  */
+
+// core
+/**
+ * React.createElement('elementName', { className: 'someClasses', id: 'someID', key: someKey, htmlFor: 'someFor', ...}, 'someTextContent' or nodes/children[])
+ * const root = React.createRoot(elementName)
+ * custom react element object
+ * root.render({$$typeof: Symbol.for('react.element'), type:'elementName', ref:null, props:{}}) (type is tagName)
+ * if Function(component) is givent to type it is called and returns a react element object
+ * key errors/warnings
+ * style is an object not string & camelCase
+ */

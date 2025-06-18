@@ -161,3 +161,29 @@
 - [ ] testing (`jest`, `supertest`, `mocha`)
 - [ ] nodemon, production readiness (`pm2`, `helmet`, rate limiting)
 - [ ] Best Practices & Resources ([Node.js Docs](https://nodejs.org/en/docs), [Node Best Practices](https://github.com/goldbergyoni/nodebestpractices), [Express Docs](https://expressjs.com/))
+
+## Next.js
+
+- [x] what & why of Next.js (React framework, SSR, SSG, SEO-friendly)
+- [x] project setup (manual, `create-next-app`, folder structure)
+- [x] pages & routing (file-based routing, dynamic routes, catch-all routes)
+- [x] linking pages (`next/link`, shallow routing)
+- [x] assets & static files (`public` folder, `next/image`)
+- [ ] metadata & SEO (`<Head>`, `app/head.tsx`, `next-seo`)
+- [x] layouts (shared UI, nested layouts, `layout.tsx` in App Router)
+- [ ] data fetching strategies:
+  - [ ] `getStaticProps` (SSG)
+  - [ ] `getServerSideProps` (SSR)
+  - [ ] `getStaticPaths` (dynamic SSG)
+  - [ ] `fetch` in Server Components (App Router)
+- [x] API routes (`/pages/api`, request handlers)
+- [ ] middleware (request interception, auth, redirects)
+- [x] environment variables (`.env.local`, process.env)
+- [x] file-based dynamic metadata (App Router)
+- [ ] built-in CSS & Sass support
+- [ ] module CSS, Tailwind CSS integration
+- [ ] image optimization (`next/image`, automatic resizing, lazy loading)
+- [ ] font optimization (`next/font`, Google Fonts integration)
+- [ ] deployment (Vercel, custom servers, other platforms)
+- [ ] internationalization (i18n routing & configuration)
+- [ ] Best Practices & Resources ([Next.js Docs](https://nextjs.org/docs), [Next.js Learn](https://nextjs.org/learn), [Vercel Examples](https://vercel.com/templates/next.js))
